@@ -10,6 +10,8 @@
 .col {
     margin-left: 230px;
 
+
+
 }
 
 body, h1, h2, p, a,td, span {
@@ -29,4 +31,5 @@ body, h1, h2, p, a,td, span {
 }
 span {
     color: maroon;
+
 }
