@@ -1,0 +1,51 @@
+<div class="container">
+    
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail Data Pengunjung</li>
+          </ol>
+        </nav>
+        <!-- /Breadcrumb -->
+  
+        <div class="row gutters-sm">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1">
+                  <a href="#datapetugas" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Data Petugas
+                  </a>
+                  <a href="#datapengunjung" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Data Pengunjung
+                  </a>
+                  <a href="#statusbuku" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Status Buku
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+            <div class="card-body tab-content">
+            <div class="tab-pane active" id="profile">
+                  <h6>Data Pengunjung</h6>
+                  <form action="/action_page.php" method="get">
+                    <label for="Name">Name:</label>
+                    <input type="text" id="Name" name="Name"><br><br>
+                    <label for="jenis_kelamin">Jenis Kelamin:</label>
+                    <input type="text" id="jenis_kelamin" name="jenis_kelamin"><br><br>
+                    <label for="ntelp">No telepon:</label>
+                    <input type="text" id="ntelp" name="ntelp"><br><br>
+                    <label for="kelas">Kelas:</label>
+                    <input type="text" id="kelas" name="kelas"><br><br>
+                    <button type="confirm" value="confirm">Konfirmasi</button>
+                    <button type="delete" value="delete">Hapus</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
