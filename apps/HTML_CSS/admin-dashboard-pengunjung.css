@@ -1,0 +1,61 @@
+.header h1{
+    margin: 50px auto;
+    padding: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 45px;
+
+    position: relative;
+}
+
+
+
+#nav_wrapper ul{
+    margin: 0 auto;
+    text-align: right;
+    font-size: 20px;
+}
+
+#nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+#nav ul li{
+    display: inline-block;
+    margin-right: 100px;
+}
+#nav ul li:hover{
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+
+#nav ul li a{
+    color: #3462c5;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+#nav ul li a:hover{
+    color: rgb(255, 94, 0);
+    text-decoration: none;
+
+}
+
+#nav ul li:hover ul{
+    display: block;
+}
+#nav ul ul{
+    display: none;
+    position: absolute;
+}
+
+
+
+}
+
+
+
+
+
