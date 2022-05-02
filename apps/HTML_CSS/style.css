@@ -8,28 +8,60 @@
       
 }
 .col {
-    margin-left: 230px;
-
-
-
+    padding-left: 50px;
+    position: auto;
 }
 
-body, h1, h2, p, a,td, span {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+.navbar-expand-lg{
+    
+    background-color: rgb(67, 111, 153);
+    
 }
-.wrap {
-    background-color:rgba(255, 255, 255, 0.7);
-    width: 800px;
-    color:black;
-    margin: 20px auto;
-    padding:15px;
+
+#background{
+    background-image: url('/images/bg.jpeg');
+    height: 55vh;
+    background-position: center;
+    background-size: cover;
+    
 }
-.icon {
-    padding:5px;
-    text-align: center;
+.name {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 280px;
 }
-span {
-    color: maroon;
+.line{
+    
+    margin-top: 30px;
+    width:60%;
+}
+
+.navbar-brand{
+     color: white;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.nav-link{
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+.lines{
+    
+    margin-top: 10px;
+    width:20%;
+}
+.row {
+    padding-top: 60px;
 
 }
+ .form-control{
+     width: 400px;
+ }
+ .button-pengajuan{
+     margin: 10px;
+     padding: 30px;
+     
+ }
