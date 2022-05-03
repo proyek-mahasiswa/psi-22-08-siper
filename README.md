@@ -20,4 +20,4 @@ Please read [RULES.md](RULES.md).
 + 12S19045 - Regita (@regitapakpahan)
 + 12S19043 - Ignatia (@ignatia31)
 + 12S19045 - Agnes Manalu (@agnesmanalu29)
-+ 12S19062 - Nama (@ardikasolagratia)
++ 12S19062 - Ardika Solagratia Sianturi (@ardikasolagratia)
