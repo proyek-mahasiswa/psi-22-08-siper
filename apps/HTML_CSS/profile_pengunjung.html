@@ -31,8 +31,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
                   </li>
-
-                  
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                      
@@ -42,45 +40,59 @@
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                        </ul>
                     </li>
-      </div>
-    </div>
-  </nav>
+                </div>
+            </div>
+        </nav>
 
-  <center>
-    <h2 class="title"> Profile </h2> 
-  <hr class="lines">
+    <div class="rows">
+        <div class="col-12">
+            <center>
+                <h2 class="title"> Profile </h2> 
+              <hr class="lines">
+              <br>
+              </center> 
+        </div>
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nama pengunjung </label>
+            <input type="nama" class="form-control" id="exampleInputnama" aria-describedby="namaHelp" placeholder="Nama">
+          </div>
+        
+         <form>
+          <div class="mb-3">
+             <label for="exampleInputEmail1" class="form-label">Nomor Telepon </label>
+             <input type="no.telepon" class="form-control" id="exampleno.telepon" aria-describedby="no.telepon" placeholder="No Telepon">
+         </div>	          
+      
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="username" class="form-control" id="exampleInputusername" aria-describedby="usernameHelp" placeholder="Username">
+          </div>
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Password</label>
+          <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+          </div>
   <br>
   
-    <body>
-      <div class="wrap">
-           <table>
-              <tr>
-                  <td rowspan="8" width="100px"> <img src="https://images.assetsdelivery.com/compings_v2/thesomeday123/thesomeday1231712/thesomeday123171200008.jpg" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
-              </tr>
-              <tr>
-                  <td><b>Username </b></td>
-                  <td>:</td> <td> agnesmnl </td>
-              </tr>
-              
-              <tr>
-                  <td><b>Nama </b></td>
-                  <td>:</td> <td> Agnes Manalu </td>
-              </tr>
-              <tr>
-                  <td><b>Jenis Kelamin </b></td><td>:</td> <td>Perempuan</td>
-              </tr>
-              <tr>
-                <td><b>Nomor Telepon</b></td><td>:</td> <td>0812345632</td>
-            </tr>
-            
-          </table>
-          </center>
-  <br> <br>
-  <center>
-  <div class="button-update-profile-pengunjung">
-              <a type="submit" class="btn btn-primary" href="editprofile_pengunjung.html" role="button"> Update </a>
-              <a type="button" class="btn btn-secondary" href="homepage_pengunjung.html" role="button"> Back </a>
-                </div>
-      </div>
-    </body>
-    </html>
+          <div class="mb-4">
+             <label for="inputFoto" class="form-label">Tambahkan Foto</label>
+             <input type="file" class="form-control" id="inputFoto" aria-describedby="fotoHelp">				
+          </div>	
+          </div>
+          </div>		
+   
+          <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button> 
+  
+        </div>
+        <br>
+    </form>
+  </html>
+    
+    
