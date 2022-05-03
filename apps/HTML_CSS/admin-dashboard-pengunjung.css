@@ -39,10 +39,13 @@
      color: white;
      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
 .nav-link{
     color:white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
+
+
 
 .title {
     font-family: 'Times New Roman', Times, serif;
@@ -103,4 +106,6 @@ table {
     border-radius: 3px;
     text-align: center;
     position: relative;
+    
 }
+
