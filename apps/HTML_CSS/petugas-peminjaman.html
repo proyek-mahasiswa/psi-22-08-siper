@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style_pengunjung.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Petugas-Pengembalian</title>
+  </head>
+
+
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-blue">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">SIPER</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1">Book</a>
+                </li>
+                      
+                <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
+                </li>
+                    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Petugas</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a href="profile_pengunjung.html"class="dropdown-item" href="#">Profil</a></li>
+                        <li><a href="loanhistory_pengunjung.html" class="dropdown-item" href="#">Riwayat</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+          </div>
+        </div>
+      </nav>
+    
+    <!-- body -->
+    <center>
+       <h2>Profil Perpustakaan</h2>
+       <h4>SMA Swasta HKBP 2 Tarutung</h4> 
+       <hr class="line">
+    </center>
+    
+<!-- search bar-->
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+  
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </nav>
+  <br /><br />
+  <!--end of search bar-->
+  
+  <center>
+       <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Pengunjung</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Peminjaman</li>
+      <li class="breadcrumb-item active" aria-current="page">Pengembalian</li>
+      <li class="breadcrumb-item active" aria-current="page">Perpanjangan</li>
+      <li class="breadcrumb-item active" aria-current="page">Data buku</li>
+    </ol>
+  </nav>
+
+  </center>
+ 
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.2.1118087890.1651560427" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Nama  : Bagas</p>
+          <p class="card-text">Status: Siswa Aktif</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <center>
+    <!-- <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Rusak</button>
+    <button type="button" class="btn btn-primary">Hilang</button>
+    <button type="button" class="btn btn-primary">Sudah dikembalikan</button>
+  </div> -->
+
+  <a class="btn btn-primary" href="#" role="button">Diterima</a>
+  <button class="btn btn-primary" type="submit">Ditolak</button>
+  </center>
+  
+  </body>
