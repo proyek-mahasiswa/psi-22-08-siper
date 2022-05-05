@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+
+Route::get('/homepage_pengunjung', function () {
+    return view('auth.homepage_pengunjung');
 });
