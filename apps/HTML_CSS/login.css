@@ -31,7 +31,7 @@ body {
 	height: 430px;
 }
 .form-box:before {
-	background-image: url("https://www.suarasurabaya.net/wp-content/uploads/2018/09/kk209610_clip10.jpg");
+	background-image: url("https://i.pinimg.com/564x/e2/25/2e/e2252e8be702a872a8165b6651c44d62.jpg");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -43,7 +43,7 @@ body {
 	bottom: 0;
 	z-index: -1;
 	display: block;
-	filter: blur(2px);
+	
 }
 .form-box .header-text {
 	font-size: 32px;
