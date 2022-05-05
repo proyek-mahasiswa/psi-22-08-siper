@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
+updateRegister
 
 Route::get('/register', function () {
     return view('register');
@@ -28,3 +30,10 @@ Route::get('/register', function () {
 // REGISTER
 Route::get('/register', 'App\Http\Controllers\RegisterController@index');
 Route::post('/create_account', 'App\Http\Controllers\RegisterController@storeRegister');
+
+Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+
+Route::get('/homepage_pengunjung', function () {
+    return view('auth.homepage_pengunjung');
+});
+
