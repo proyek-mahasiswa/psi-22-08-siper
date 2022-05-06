@@ -14,24 +14,23 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::get('/', function () {
+    return view('index');
 });
 
-updateRegister
-
+// REGISTER
 Route::get('/register', function () {
     return view('register');
 });
 
 
-
-
-// REGISTER
 Route::get('/register', 'App\Http\Controllers\RegisterController@index');
 Route::post('/create_account', 'App\Http\Controllers\RegisterController@storeRegister');
 
 Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+Route::get('/login', function () {
+    return view('auth.login');
+});
 
 Route::get('/homepage_pengunjung', function () {
     return view('auth.homepage_pengunjung');
