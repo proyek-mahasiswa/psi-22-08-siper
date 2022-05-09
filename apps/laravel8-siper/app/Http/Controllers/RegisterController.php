@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use HasApiTokens, HasFactory, Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -18,7 +16,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     /**
@@ -30,14 +28,15 @@ class RegisterController extends Controller
     {
         
         {
-            User::create([
+            $user = User::create([
+                
                 'username' => $request->username,
-                'password' => Hash::make($request->password),
+                'password' => $request-> password,
                 'email' => $request->email,
                 'roles' => ($request->roles),
             ]);
-    
-            return redirect('login');
+            $user->save();
+            return redirect('/auth.login');
         }
     
     }
