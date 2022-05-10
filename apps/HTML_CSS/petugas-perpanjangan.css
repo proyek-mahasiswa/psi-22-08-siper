@@ -1,3 +1,8 @@
+
+.navbar-expand-lg {
+  background-color: rgb(67, 111, 153);
+}
+
 .img {
   margin-top: 20px;
   margin-left: 20px;
@@ -21,6 +26,7 @@
   background-position: center;
   background-size: cover;
 }
+
 .name {
   font-family: 'Times New Roman', Times, serif;
   margin-top: 280px;
@@ -41,7 +47,11 @@
 
 .title {
   font-family: 'Times New Roman', Times, serif;
+
+  margin-top: 20px;
+
   margin-top: 60px;
+
 }
 .lines {
   margin-top: 10px;
@@ -50,6 +60,62 @@
 .row {
   padding-top: 60px;
 }
+
+/* header */
+header {
+  background: rgb(32, 26, 26);
+  color: rgb(0, 0, 0);
+  padding: 20px 20px;
+  font-size: 20px;
+}
+/* lebar menu dan background */
+aside {
+  flex: 20%;
+  background: rgb(7, 7, 7);
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding: 6px;
+}
+
+/*konten utama*/
+section.main {
+  flex: 80%;
+  background: rgb(0, 0, 0);
+  min-height: 20px;
+  padding: 15px 20px;
+}
+
+/*navigasi*/
+.menu {
+  padding: 0;
+}
+.menu li {
+  border-bottom: 2px double rgb(0, 0, 0);
+}
+.menu a {
+  display: block;
+  padding: 20px 20px;
+  list-style: none;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: rgb(0, 0, 0);
+}
+
+.card-text {
+  margin-left: 20px;
+}
+
+.title {
+  margin-left: 50px;
+}
+
+.table-bordered {
+  width: 20px;
+
 .form-control {
   width: 400px;
 }
@@ -119,6 +185,7 @@ table {
   border-radius: 3px;
   text-align: center;
   position: relative;
+
 }
 
 
