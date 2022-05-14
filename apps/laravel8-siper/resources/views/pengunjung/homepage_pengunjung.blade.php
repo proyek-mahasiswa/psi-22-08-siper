@@ -85,18 +85,7 @@
     </div>
   </div>
   <br>
-  <div class="col">
-    <div class="card">
-      <img src="/images/book3.jpeg" class="card-img-top" alt="im2">
-      <div class="card-body">
-        <h5 class="card-title">Kalkulus</h5>
-        <p class="card-text"> Penerbit : Airlangga</p>
-        <p class="card-text"> Tahun Terbit : 2002 </p>
-        <a href="loaningpage_pengunjung.html" class="btn btn-primary">Detail</a>
-      </div>
-    </div>
-  </div>
-</div>
+  
 </div> <br></br>
 
 <!--Footer -->
