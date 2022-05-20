@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/style_pengunjung.css">
+    <link rel="stylesheet" href="css/style_pengunjung.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>Homepage_Pengunjung</title>
   </head>
@@ -71,23 +71,30 @@
 <h2 class="name"> Sistem Informasi Perpustakaan SMA Swasta HKBP 2 Tarutung  </h2> 
 <hr class="line">
 <br>
+
+@foreach ($books as $book)
 <div id="scrollspyHeading1">
 <div class="row row-cols-1 row-cols-md-4 ">
   <div class="col">
     <div class="card">
       <img src="/images/book1.jpeg" class="card-img-top" alt="rim1">
       <div class="card-body">
-        <h5 class="card-title">Kalkulus</h5>
-        <p class="card-text"> Penerbit : Airlangga</p>
-        <p class="card-text"> Tahun Terbit : 2002 </p>
-        <a href="loaningpage_pengunjung.html" class="btn btn-primary">Detail</a>
+        <h5 class="card-title">{{$book->judul_buku}}</h5>
+        <p class="card-text"> Nama Pengarang : {{$book->pengarang}}</p>
+        <p class="card-text"> Rak Buku : {{$book->rak_buku}} </p>
+       
+      <a href="{{ route('book/detail/{id}', ['id'=>$book->id]) }}" class="btn btn-primary">Detail</a>
+     
+       
+         </div>
+
       </div>
     </div>
   </div>
-  <br>
+  
   
 </div> <br></br>
-
+@endforeach
 <!--Footer -->
 <footer>
 <div class="text-center">

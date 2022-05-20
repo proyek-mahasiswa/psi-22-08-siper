@@ -78,7 +78,7 @@
     </div> -->
 
     <div>
-    <a class="btn btn-primary" href="petugas-form tambah buku.html" role="button">Tambahkan</a>
+    <a class="btn btn-primary" href="/tambah_buku" role="button">Tambahkan</a>
     </div>
 
     <br>

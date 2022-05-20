@@ -20,10 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/homepage_pengunjung', function () {
-    return view('pengunjung.homepage_pengunjung');
+    return view('homepage_pengunjung');
 });
 
-
+Route::get('/daftarbuku', function () {
+    return view('petugas.daftarbuku');
+});
 
 // REGISTER
 Route::get('/register', function () {
@@ -33,13 +35,22 @@ Route::get('/register', 'App\Http\Controllers\RegisterController@index');
 Route::post('/create_account', 'App\Http\Controllers\RegisterController@storeRegister');
 
 
-
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
-//Tambah Buku
+//Tambah Buku dari halaman petugas
 Route::get('/tambah_buku', function () {
     return view('petugas.tambah_buku');
 });
 Route::get('/tambah_buku', 'App\Http\Controllers\BukuController@index');
 Route::post('/buku', 'App\Http\Controllers\BukuController@storeBook');
+
+//fix ini untuk menampilkan buku di homepage pengunjung
+Route::get('homepage_pengunjung', 'App\Http\Controllers\BukuController@showBook');
+
+//untuk melakukan loaning (peminjaman)
+Route::get('/loaningpage_pengunjung', function () {
+    return view('loaningpage_pengunjung');
+});
+//Route::get('/book/detail/{id}', [App\Http\Controllers\BukuController::class, 'getDetail'])->name('book/detail/{id}');
+//Route::get('/book/detail/{id}', 'App\Http\Controllers\BukuController@getDetail');

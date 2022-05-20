@@ -26,12 +26,31 @@ class BukuController extends Controller
                 'judul_buku' => $request->judul_buku,
                 'pengarang' => $request->pengarang,
                 'penerbit' => $request->penerbit,
-                'tahun_terbit' => $request-> tahun_terbit,
-                'rak_buku' => $request-> rak_buku,
+                'tahun_terbit' => $request->tahun_terbit,
+                'rak_buku' => $request->rak_buku,
             ]);
             $book->save();
-            return redirect('/buku.daftar_buku');
+            return redirect('daftarbuku');
         }
     
-    }
 
+        public function showBook()
+    {
+        
+            // mengambil data dari table buku
+            $books = DB::table('books') -> get();
+
+            // mengirim data bukuke view 
+            return view('homepage_pengunjung', ['books' => $books]);
+            }
+    
+
+
+
+public function getDetail($id){
+
+    $books = DB::table('books')->where('id', $id)->first();
+
+    return view('loaningpage_pengunjung', ['id' => $id]);
+}
+}

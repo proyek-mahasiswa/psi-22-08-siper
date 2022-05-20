@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="petugas-perpanjangan.css">
+    <link rel="stylesheet" href="css/petugas-perpanjangan.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>Tambah Buku</title>
   </head>
@@ -83,11 +84,23 @@
                  <input type="text" class="form-control" id="rak_buku" name="rak_buku" placeholder="rak_buku">
              </div>	 		
     		
+             
    
           <div class="text-center">
           <button type="submit" class="btn btn-primary">Submit</button> 
   
         </div>
+       
         <br>
-    </form>
+        </form>
+        <footer>
+<div class="text-center">
+  <div class="container p-2"></div>
+  <div class="text-center p-1">
+    © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+  <div class="text-center p-1">
+    Contact Us On : xxxxxxxx </div>
+</div>
+</footer>
+    
   </html>
