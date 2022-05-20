@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->string('rak_buku');
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
