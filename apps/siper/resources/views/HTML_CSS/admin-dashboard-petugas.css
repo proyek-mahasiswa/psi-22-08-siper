@@ -1,0 +1,106 @@
+.img{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 30%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 8%;
+      
+}
+.col {
+    padding-left: 50px;
+    position: auto;
+}
+
+.navbar-expand-lg{
+    
+    background-color: rgb(67, 111, 153);
+    
+}
+
+#background{
+    background-image: url('/images/bg.jpeg');
+    height: 55vh;
+    background-position: center;
+    background-size: cover;
+    
+}
+.name {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 280px;
+}
+.line{
+    
+    margin-top: 30px;
+    width:60%;
+}
+
+.navbar-brand{
+     color: white;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.nav-link{
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+.lines{
+    
+    margin-top: 10px;
+    width:20%;
+}
+.row {
+    padding-top: 60px;
+
+}
+
+ .menu ul{
+     float: none;
+     margin-left: 150px;
+     position: relative;
+     padding: 10px 6px;
+ }
+
+ .menu ul a{
+     background-color: rgb(67, 111, 153);
+     color:#fff;
+     border-radius: 2px;
+     text-decoration: none;
+     padding: 4px;
+ }
+
+ .menu ul a:hover{
+     background-color: rgb(255, 127, 80);
+ }
+
+ h2.title{
+     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+ }
+
+ .isiPengunjung{
+     display: flex;
+     flex-direction: row;
+     padding: 2px;
+ }
+
+ .isiPengunjung h2{
+     margin: 0px 460px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+     font-size: 20px;
+     position: relative;
+ }
+
+tr td a{
+    text-decoration: none;
+    color: black;
+}
+table {
+    background-color: aliceblue;
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+}
