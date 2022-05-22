@@ -52,5 +52,7 @@ Route::get('homepage_pengunjung', 'App\Http\Controllers\BukuController@showBook'
 Route::get('/loaningpage_pengunjung', function () {
     return view('loaningpage_pengunjung');
 });
-//Route::get('/book/detail/{id}', [App\Http\Controllers\BukuController::class, 'getDetail'])->name('book/detail/{id}');
-//Route::get('/book/detail/{id}', 'App\Http\Controllers\BukuController@getDetail');
+
+//untuk menampilkan detail buku dan dari halaman ini akan dilakukan peminjaman
+Route::get('/book/detail/{id}', [App\Http\Controllers\BukuController::class, 'getDetail'])->name('book/detail/{id}');
+Route::get('/books/detail{id}', 'BukukController@getDetail');
