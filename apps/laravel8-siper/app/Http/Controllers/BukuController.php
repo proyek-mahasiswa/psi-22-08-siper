@@ -41,19 +41,17 @@ class BukuController extends Controller
             $books = DB::table('books') -> get();
 
             // mengirim data bukuke view 
-            return view('homepage_pengunjung', ['books' => $books]);
+            return view('pengunjung.homepage_pengunjung', ['books' => $books]);
             }
     
 
-
-
-public function getDetail($id){
+        public function getDetail($id){
 
   //  $book = DB::table('books')->where('id', $id)->first();
 
  //   return view('loaningpage_pengunjung', ['id' => $id]);
 //}
 $book = Book::find($id);
-return view("loaningpage_pengunjung")->with("book", $book);
+return view("pengunjung.loaningpage_pengunjung")->with("book", $book);
 }
 }

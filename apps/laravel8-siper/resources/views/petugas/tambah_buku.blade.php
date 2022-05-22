@@ -46,6 +46,7 @@
 
     <div class="rows">
         <div class="col-12">
+          <br>
             <center>
                 <h2 class="title"> Tambah Buku </h2> 
               <hr class="lines">
@@ -84,14 +85,10 @@
                  <input type="text" class="form-control" id="rak_buku" name="rak_buku" placeholder="rak_buku">
              </div>	 		
     		
-             
-   
-          <div class="text-center">
+            <center> 
           <button type="submit" class="btn btn-primary">Submit</button> 
-  
-        </div>
-       
-        <br>
+    </div>
+<br>
         </form>
         <footer>
 <div class="text-center">
