@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/homepage_pengunjung', function () {
-    return view('homepage_pengunjung');
+    return view('pengunjung.homepage_pengunjung');
 });
 
 Route::get('/daftarbuku', function () {
@@ -50,9 +50,9 @@ Route::get('homepage_pengunjung', 'App\Http\Controllers\BukuController@showBook'
 
 //untuk melakukan loaning (peminjaman)
 Route::get('/loaningpage_pengunjung', function () {
-    return view('loaningpage_pengunjung');
+    return view('pengunjung.loaningpage_pengunjung');
 });
 
 //untuk menampilkan detail buku dan dari halaman ini akan dilakukan peminjaman
 Route::get('/book/detail/{id}', [App\Http\Controllers\BukuController::class, 'getDetail'])->name('book/detail/{id}');
-Route::get('/books/detail{id}', 'BukukController@getDetail');
+Route::get('/books/detail{id}', 'BukuController@getDetail');
