@@ -48,7 +48,7 @@
 
 
 .title {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 20px;
 }
 .lines{
@@ -78,7 +78,18 @@
 
  .menu ul a:hover{
      background-color: rgb(255, 127, 80);
+
  }
+ .data h2{
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    margin:auto;
+    width: 200px;
+
+    position: relative;
+}
+
+
+
 
  h2.title{
      font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
@@ -108,4 +119,6 @@ table {
     position: relative;
     
 }
+
+
 
