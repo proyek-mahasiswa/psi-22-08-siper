@@ -58,41 +58,79 @@
                 <a href="admin-status-buku" class="active">Status Buku</a>
                 </ul>
     </div>
+    <h1 class="text-center mb-4 ">Data Status Buku</h1>
+<div class="container">
+    <div class="row">
+        
+    <table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">Gambar</th>
+      <th scope="col"></th>
+      <th scope="col">Buku</th>
+      <th scope="col">Keterangan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td> <input type="submit" class="btn btn-success" value="Details" href="#"></input></td>
+      <td>Judul Buku</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
-    <div class="data">
-        <h2>Data Status Buku</h2>
-    </div>
-    <br>
+    <!-- </div>
+</div>
 
     <table border="0" align="center" width="1000px" style="margin:auto">
         <tr class="nama-aktif">
             <th width="100px">
                 <br>
                 <br>
-            </th>
-
+                <th width="100px">Gambar</th>
             <th width="200px">Buku</th>
             <th width="450px">Keterangan</th>
+            </th>
         </tr>
+        
             
                 <tr>
+                    <td></td>
                     <td></td>
                     <td align="left" height="10px">Judul Buku</td>
                     <td></td>
                 </tr>
 
                 <tr>
-                    <td align="center" height="10px"><img src="img/1.png" width="40" height="40"></td>
-                    <td align="left" height="40px">Penerbit</td>
                     <td></td>
+                    <td></td>
+                    <td align="left" height="10px">Pengarang</td>
+                
                 </tr>
 
                 <tr>
-                    <td><input type="submit" class="btn btn-primary" value="Detail" href="#"></input></td>
-                    <td align="left" >Tahun penerbit</td>
-                    <td></td>
+                <td></td>
+                <td></td>
+                <td align="left" height="10px">Penerbit</td>   
+            
                 </tr>
-    </table>
+
+                <tr>
+                    
+                <td></td>
+                <td><input type="submit" class="btn btn-primary" value="Detail" href="#"></input></td>
+                <td align="left" height="10px">Tahun penerbit</td>
+                <td ></td>
+                
+             
+                    
+                </tr>
+    </table> -->
+
+
 </body>
 
 </html>
+

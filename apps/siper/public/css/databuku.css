@@ -26,9 +26,10 @@
 }
 
 .nav-link:hover{
-   color: coral;
-
-}
+    color: rgb(255, 255, 255);
+    background-color: rgb(182, 182, 182);
+ 
+ }
 
 
 
@@ -83,3 +84,7 @@ table td.isiData{
     justify-content: left;
 }
 
+td.isiData{
+    margin-left: 10px;
+
+}

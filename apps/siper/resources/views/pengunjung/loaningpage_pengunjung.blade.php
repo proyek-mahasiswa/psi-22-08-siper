@@ -24,12 +24,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="home">Home</a>
             </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="homepage_pengunjung.html">Book</a>
-                </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
-                    </li>
+                
   
                        <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
@@ -59,7 +54,7 @@
                 <td rowspan="8" width="100px"> <img src="/images/book1.jpeg" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
             </tr>
             <tr>
-                <td><b>Nama Buku </b></td>
+                <td><b>Judul Buku </b></td>
                 <td>:</td> <td> The Midnight Library </td>
             </tr>
             <tr>
@@ -83,14 +78,14 @@
         <div class="mb-4">
             <label for="inputTanggalAwal" class="form-label">Masukkan tanggal Peminjaman</label>
             <input type="date" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp">
-            <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div>
+            <!-- <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div> -->
         </div>
     </div>
     <div class="col-6">
         <div class="mb-4">
             <label for="inputTanggalAkhir" class="form-label">Masukkan tanggal Pengembalian</label>
             <input type="date" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
-            <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div>
+            <!-- <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div> -->
         </div>
     </div>
 </div>
@@ -98,7 +93,7 @@
 <h3 class="title"> Ajukan Peminjaman ?  </h3> 
 <div class="button-pengajuan">
             <a type="submit" class="btn btn-primary" href="loanhistory_pengunjung.html" role="button"> Ajukan </a>
-            <a type="button" class="btn btn-secondary" href="homepage_pengunjung.html" role="button"> Batalkan </a>
+            <a type="button" class="btn btn-secondary" href="home" role="button"> Batalkan </a>
               </div>
     </div>
 

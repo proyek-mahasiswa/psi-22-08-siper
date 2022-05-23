@@ -26,9 +26,10 @@
 }
 
 .nav-link:hover{
-   color: coral;
-
-}
+    color: rgb(255, 255, 255);
+    background-color: rgb(182, 182, 182);
+ 
+ }
 
 
 
@@ -81,4 +82,8 @@ table td ul.nav a{
     margin: auto;
     width: 50%;
     position: relative;
+}
+
+p.card-text{
+    margin: 10px;
 }

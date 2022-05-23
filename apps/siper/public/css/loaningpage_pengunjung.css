@@ -26,7 +26,7 @@
     
 }
 .name {
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
     margin-top: 280px;
 }
 .line{
@@ -41,11 +41,22 @@
 }
 .nav-link{
     color:white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
+.navbar-brand:hover{
+   color: coral;
+}
+
+
+.nav-link:hover{
+   color: coral;
+
+}
+
+
 .title {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
     margin-top: 60px;
 }
 .lines{

@@ -62,26 +62,93 @@
             </ul>
         </div>
     </div>
-    <div class="data">
-        <h2>Data Pengunjung</h2>
-    </div>
+    
+        <h1 class="text-center mb-4">Data Pengunjung</h1>
+        <div class="container ">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Nama</th>
+      <th scope="col"></th>
+      <th scope="col">Aktivitas</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+      <th scope="row"></th>
+      <td><a href="">Halo</a></td>
+      <td></td>
+      <td>
+                    <input type="submit" class="btn btn-danger" value="Hapus" href="#" data-target="#hapuspengunjung" data-toggle="modal"></input> 
+      </td>
+    </tr>
 
-    <br>
+  </tbody>
+
+</table>
+
+      </div>
+  </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+<!--   
     <table border="0" align="center" width="1000px">
         <tr class="nama-aktif">
     
             <th width="200px">Nama</th>
             <th width="450px">Aktivitas</th>
         </tr>
-        
         <tr>
 
-            <td><a href="profil_pengunjung" class="href">Ucok</a></td>
-            <td><a type="submit" class="btn btn-primary" href="#" role="button"> Hapus </a></td>
+            <td><a href="profil_pengunjung" class="href">Halo</a></td>
+            <td><a type="submit" class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> Hapus </a></td>
         </tr>
-    </table>
-    </div>
+      
+    </table> -->
+
+  
+
+    <!--Modals Hapus-->
+                            <div class="modal fade" id="hapuspengunjung" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <label for="">Apakah data ingin dihapus?</label>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+    
 
 </body>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

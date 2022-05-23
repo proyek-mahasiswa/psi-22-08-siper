@@ -25,13 +25,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
-              <li class="nav-item">
-                <a class="nav-link" href="homepage_pengunjung.html">Book</a>
-              </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
-                  </li>
-
+          
                   
                   <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
@@ -85,9 +79,10 @@
   <br> <br>
   <center>
   <div class="button-update-profile-pengunjung">
-              <a type="submit" class="btn btn-primary" href="editprofile_pengunjung.html" role="button"> Update </a>
+              <a type="submit" class="btn btn-primary" href="" role="button"> Update </a>
               <a type="button" class="btn btn-secondary" href="home" role="button"> Back </a>
                 </div>
       </div>
+      
     </body>
     </html>

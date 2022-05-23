@@ -37,7 +37,7 @@
 
 .navbar-brand{
     color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
 .navbar-brand:hover{
@@ -52,7 +52,7 @@
    color: coral;
 }
 .title {
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
    margin-top: 60px;
 }
 .lines{
@@ -90,4 +90,9 @@
     color :white;
  }
  
- 
+ footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }

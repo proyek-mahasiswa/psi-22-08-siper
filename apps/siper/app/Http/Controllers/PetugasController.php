@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Buku;
+use App\Models\Petugas;
+use Illuminate\Support\Facades\DB;
 
 class PetugasController extends Controller
 {
@@ -13,12 +16,16 @@ class PetugasController extends Controller
      */
     public function __construct()
     {
+        $this->Buku = new Buku();
         $this->middleware('auth');
+       
     }
     
     public function index()
     {
-        return view('petugas.homepagepengunjung_petugas');
+        $data = Buku::all();
+        
+        return view('petugas.homepagepengunjung_petugas',compact('data'));
     }
 
     public function vPengunjung(){
@@ -42,9 +49,12 @@ class PetugasController extends Controller
     }
 
     public function vDaftarbuku(){
-        return view('petugas.daftarbuku');
+        $data = ['buku'=> $this->Buku->viewBuku(),
+    ];
+    return view('petugas.daftarbuku', $data);
+      
     }
-
+    
     public function profilePetugas(){
         return view('petugas.profile-petugas');
     }
@@ -61,6 +71,21 @@ class PetugasController extends Controller
         //
     }
 
+    public function insertbuku(Request $request){
+
+        // dd($request->all());
+        $data = Buku::create([
+            'judul' => $request->judul,
+            'pengarang' => $request->pengarang,
+            'penerbit' => $request->penerbit,
+            'tahunterbit' => $request-> tahunterbit,
+            'rak' => $request-> rak,
+           
+        ]);
+
+        $data->save();
+         return redirect()->route('homepagepengunjung_petugas');
+    }
     /**
      * Store a newly created resource in storage.
      *

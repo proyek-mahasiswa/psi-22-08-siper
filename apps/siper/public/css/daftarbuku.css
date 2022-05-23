@@ -4,7 +4,6 @@
 }
 
 .img {
-  margin-top: 20px;
   margin-left: 20px;
   width: 30%;
   max-width: 100px;
@@ -22,88 +21,42 @@
 
 #background {
   background-image: url('/images/bg.jpeg');
-  height: 55vh;
   background-position: center;
   background-size: cover;
 }
 
-.name {
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 280px;
-}
+
+
 .line {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 60%;
 }
 
-.navbar-brand {
+.navbar-brand{
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.nav-link {
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.title {
-  font-family: 'Times New Roman', Times, serif;
+.navbar-brand:hover{
+ color: coral;
+}
+.nav-link{
+ color:white;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+}
 
-  margin-top: 20px;
-
-  margin-top: 60px;
+.nav-link:hover{
+ color: coral;
 
 }
-.lines {
-  margin-top: 10px;
-  width: 20%;
-}
-.row {
-  padding-top: 60px;
-}
+
+
 
 /* header */
-header {
-  background: rgb(32, 26, 26);
-  color: rgb(0, 0, 0);
-  padding: 20px 20px;
-  font-size: 20px;
-}
-/* lebar menu dan background */
-aside {
-  flex: 20%;
-  background: rgb(7, 7, 7);
-  width: 20px;
-  height: 20px;
-  float: left;
-  padding: 6px;
-}
 
-/*konten utama*/
-section.main {
-  flex: 80%;
-  background: rgb(0, 0, 0);
-  min-height: 20px;
-  padding: 15px 20px;
-}
 
-/*navigasi*/
-.menu {
-  padding: 0;
-}
-.menu li {
-  border-bottom: 2px double rgb(0, 0, 0);
-}
-.menu a {
-  display: block;
-  padding: 20px 20px;
-  list-style: none;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
 
-.menu a:hover {
-  background: rgb(0, 0, 0);
-}
+
 
 .card-text {
   margin-left: 20px;
@@ -119,14 +72,6 @@ section.main {
 .form-control {
   width: 400px;
 }
-.button-pengajuan {
-  margin: 10px;
-  padding: 30px;
-}
-.rows {
-  padding-top: 20px;
-  padding: 20px;
-}
 .mb-3 {
   margin-left: 450px;
 }
@@ -140,116 +85,33 @@ section.main {
   color: white;
 }
 
-.menu ul {
-  float: none;
-  margin-left: 150px;
-  position: relative;
-  padding: 10px 6px;
-}
 
-.menu ul a {
-  background-color: rgb(67, 111, 153);
-  color: #fff;
-  border-radius: 2px;
-  text-decoration: none;
-  padding: 4px;
+h1{
+  margin-top: 60px;
 }
-
-.menu ul a:hover {
-  background-color: rgb(255, 127, 80);
-}
-
-h2.title {
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-}
-
-.isiPengunjung {
-  display: flex;
-  flex-direction: row;
-  padding: 2px;
-}
-
-.isiPengunjung h2 {
-  margin: 0px 460px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
-  font-size: 20px;
-  position: relative;
-}
-
-tr td a {
-  text-decoration: none;
-  color: black;
-}
-table {
-  background-color: aliceblue;
-  border-radius: 3px;
-  text-align: center;
-  position: relative;
-
-}
-
-
-.navbar-expand-lg {
-  background-color: rgb(67, 111, 153);
-}
-
-.name {
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 280px;
-}
-.line {
-  margin-top: 30px;
-  width: 60%;
-}
-
-.navbar-brand {
-  color: rgb(244, 240, 240);
+h2 {
+  margin-top: 10px;
+  font-weight: 800;
+  color:#000000;
+  width: 100%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.nav-link1 {
-  color: rgb(250, 250, 251);
-  font-family: 'Times New Roman', Times, serif;
-}
 
-.nav-link2 {
-  color: rgb(68, 68, 69);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.title {
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 20px;
-}
-.lines {
-  margin-top: 10px;
-  width: 20%;
-}
-.row {
-  padding-top: 60px;
-}
-.form-control {
-  width: 400px;
-}
-
-h2 {
-  font-family: 'times new roman';
-  margin-top: 25px;
-  font-weight: 800;
-  font-size: 45px;
-  margin-bottom: 20px;
-  color: #001e6c;
+footer{
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  line-height: 50px;
+  height: 30px;
 }
 
-.btn-outline-success {
-  margin-right: 30px;
-  float: right;
-  width: 30;
+.tambahb{
+  margin-top: -46px;
+  margin-left: 120px;
+  position: relative;
 }
 
-.card-text {
-  width: 50;
+.kembali{
+  margin-left: 40px;
 }
 
 /*--daftar buku--*/
