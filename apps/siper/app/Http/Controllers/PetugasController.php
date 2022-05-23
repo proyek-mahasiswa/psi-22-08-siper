@@ -21,6 +21,36 @@ class PetugasController extends Controller
         return view('petugas.homepagepengunjung_petugas');
     }
 
+    public function vPengunjung(){
+        return view('petugas.homepagepengunjung_petugas');
+    }
+
+    public function vPeminjaman(){
+        return view('petugas.peminjaman');
+    }
+
+    public function vPengembalian(){
+        return view('petugas.pengembalian');
+    }
+
+    public function vPerpanjangan(){
+        return view('petugas.perpanjangan');
+    }
+
+    public function vDatabuku(){
+        return view('petugas.databuku');
+    }
+
+    public function vDaftarbuku(){
+        return view('petugas.daftarbuku');
+    }
+
+    public function profilePetugas(){
+        return view('petugas.profile-petugas');
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

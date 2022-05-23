@@ -19,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-blue">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SIPER</a>
+            <a class="navbar-brand" href="home">SIPER</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span> </button>
@@ -34,13 +34,13 @@
                             data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a href="profile_admin" class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Logout</a></li>
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form><li>
+                                        <li><a href="profile-admin" class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Logout</a></li>
+                         </a>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                         @csrf
+                         </form><li>
                         </ul>
                     </li>
             </div>
@@ -68,6 +68,8 @@
 
     <table border="0" align="center" width="1000px">
     <a href="#" class="btn btn-success" data-target="#ModalAdd" data-toggle="modal">Tambah Data</a>
+
+   
     
     
         <tr class="nama-aktif">

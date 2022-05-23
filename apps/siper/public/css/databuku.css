@@ -29,10 +29,6 @@
    color: coral;
 
 }
-.nav-link:active{
-    color: coral;
-   
-}
 
 
 
@@ -64,14 +60,9 @@
 
 
 
-td.cardForm{
-    margin-left: 0px;
-    padding: 25px;
-}
-
 table td ul.nav{
     background-color: rgb(67, 111, 153);
-    height:fit-content;
+    height: 100%;
     padding: 30px;
     width: 200px;
     border-radius: 5px;
@@ -86,3 +77,9 @@ table td ul.nav a{
     width: 50%;
     position: relative;
 }
+
+table td.isiData{
+    width: 10%;
+    justify-content: left;
+}
+

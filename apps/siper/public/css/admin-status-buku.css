@@ -36,15 +36,22 @@
 }
 
 .navbar-brand{
-     color: white;
-     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.navbar-brand:hover{
+   color: coral;
+}
 .nav-link{
-    color:white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+   color:white;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
+.nav-link:hover{
+   color: coral;
+
+}
 
 
 .title {
