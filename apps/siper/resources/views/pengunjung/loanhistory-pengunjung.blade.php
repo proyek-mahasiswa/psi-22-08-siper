@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/loaningpage_pengunjung.css">
+    <link rel="stylesheet" href="css/loanhistory-pengunjung.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
-    <title>Peminjaman Buku</title>
+    <title>Riwayat Peminjaman</title>
   </head>
   <body>
 
@@ -31,9 +31,10 @@
                       <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
                     </li>
   
-                       <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
-                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                       
+                          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                           <li><a href="profile-pengunjung"class="dropdown-item" href="#">Profil</a></li>
                           <li><a href="loanhistory-pengunjung" class="dropdown-item" href="#">Riwayat</a></li>
                           <li><a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -46,63 +47,50 @@
         </div>
       </div>
     </nav>
+
   <!-- body -->
 <center>
-  <h2 class="title"> Peminjaman Buku  </h2> 
+  <h2 class="title"> Riwayat Peminjaman Buku  </h2> 
 <hr class="lines">
 <br>
 
-  <body>
-    <div class="wrap">
-         <table>
-            <tr>
-                <td rowspan="8" width="100px"> <img src="/images/book1.jpeg" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
-            </tr>
-            <tr>
-                <td><b>Nama Buku </b></td>
-                <td>:</td> <td> The Midnight Library </td>
-            </tr>
-            <tr>
-                <td><b>Pengarang</b></td><td>:</td> <td>Matt Haig</td>
-            </tr>
-            <tr>
-                <tr>
-                    <td><b> Penerbit </b></td><td>:</td> <td> Mizan</td>
-                </tr>
-            <tr>
-                <td><b>Tahun Terbit </b></td><td>:</td> <td>2015</td>
-            </tr>
-        </table>
-        </center>
-<br> <br>
+<!-- Daftar Riwayat Buku-->
 
-<!-- Input Tanggal Peminjaman-->
-<center>
-<div class="row">
-    <div class="col-6">
-        <div class="mb-4">
-            <label for="inputTanggalAwal" class="form-label">Masukkan tanggal Peminjaman</label>
-            <input type="date" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp">
-            <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div>
-        </div>
+<div class="cards">
+    <div class="card-header">
+      1
     </div>
-    <div class="col-6">
-        <div class="mb-4">
-            <label for="inputTanggalAkhir" class="form-label">Masukkan tanggal Pengembalian</label>
-            <input type="date" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
-            <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div>
-        </div>
+    <center>
+    <img src="/images/book1.jpeg" class="img" alt="gambarbuku">
+    </center>
+    <div class="card-body">
+      <div class="content">
+      <h5 class="card-title">The Midnight Library</h5>
+      <h7 class="card-title">29 April 2022 - 14 Mei 2022 </h7>
+      <br>  <br>
+      <a href="perpanjangwaktu_pengunjung.html" class="btn btn-primary">Perpanjang Waktu</a>
     </div>
+  </div>
 </div>
-<center>
-<h3 class="title"> Ajukan Peminjaman ?  </h3> 
-<div class="button-pengajuan">
-            <a type="submit" class="btn btn-primary" href="loanhistory_pengunjung.html" role="button"> Ajukan </a>
-            <a type="button" class="btn btn-secondary" href="homepage_pengunjung.html" role="button"> Batalkan </a>
-              </div>
-    </div>
+<br>
+<div class="cards">
+  <div class="card-header">
+    2
+  </div>
+  <center>
+  <img src="/images/book1.jpeg" class="img" alt="gambarbuku">
+  </center>
+  <div class="card-body">
+    <div class="content">
+    <h5 class="card-title">The Power Of Habit</h5>
+    <h7 class="card-title">29 April 2022 - 14 Mei 2022 </h7>
+    <br>  <br>
+    <a href="loaningpage_pengunjung.html" class="btn btn-primary">Sudah Dikembalikan</a>
+  </div>
+</div>
+</div>
 
-    <!--Footer -->
+<!--Footer -->
 <footer>
   <div class="text-center">
     <div class="container p-2"></div>
@@ -112,6 +100,7 @@
       Contact Us On : xxxxxxxx </div>
   </div>
   </footer>
-  
+
   </body>
+
   </html>

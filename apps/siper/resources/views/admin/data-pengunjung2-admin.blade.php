@@ -14,7 +14,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-blue">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SIPER</a>
+        <a class="navbar-brand" href="home">SIPER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span> </button>
@@ -27,9 +27,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="homepage_admin.html">Book</a>
                 </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
-                    </li>
   
                        <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
@@ -76,7 +73,7 @@
 
 <center>
 <div class="button-konfirmasi-pengunjung">
-            <a type="submit" class="btn btn-primary" href="#" role="button"> Konfirmasi </a>
+            <a type="submit" class="btn btn-warning" href="#" role="button"> Edit</a>
             <a type="button" class="btn btn-secondary" href="homepage_pengunjung" role="button"> Hapus </a>
               </div>
     </div>

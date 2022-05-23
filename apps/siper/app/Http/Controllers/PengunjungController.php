@@ -21,6 +21,14 @@ class PengunjungController extends Controller
         return view('pengunjung.loaningpage_pengunjung');
     }
 
+    public function profilePengunjung(){
+        return view('pengunjung.profile-pengunjung');
+    }
+
+    public function loanHistory(){
+        return view('pengunjung.loanhistory-pengunjung');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -77,21 +77,34 @@ Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
     Route::get('/admin-status-buku', [App\Http\Controllers\AdminController::class, 'indexBook'])->name('admin-status-buku');
     Route::get('/admin-dashboard-petugas', [App\Http\Controllers\AdminController::class, 'indexPetugas'])->name('admin-dashboard-petugas');
 
+    Route::get('/profile-admin', [App\Http\Controllers\AdminController::class, 'profileAdmin'])->name('profile-admin');
 });
 
 Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
-    Route::get('/v_pengunjung', [App\Http\Controllers\PetugasController::class, 'index' ])->name('v_pengunjung');
-    Route::get('/v_peminjaman', [App\Http\Controllers\PetugasController::class, 'index' ])->name('v_peminjaman');
-    Route::get('/v_pengembalian', [App\Http\Controllers\PetugasController::class, 'index' ])->name('v_pengembalian');
-    Route::get('/v_perpanjangan', [App\Http\Controllers\PetugasController::class, 'index' ])->name('v_perpanjangan');
-    Route::get('/v_databuku', [App\Http\Controllers\PetugasController::class, 'index' ])->name('v_databuku');
+    Route::get('/vPengunjung', [App\Http\Controllers\PetugasController::class, 'vPengunjung' ])->name('v_pengunjung');
+
+    Route::get('/vPeminjaman', [App\Http\Controllers\PetugasController::class, 'vPeminjaman' ])->name('v_peminjaman');
+
+    Route::get('/vPengembalian', [App\Http\Controllers\PetugasController::class, 'vPengembalian' ])->name('v_pengembalian');
+
+    Route::get('/vPerpanjangan', [App\Http\Controllers\PetugasController::class, 'vPerpanjangan' ])->name('v_perpanjangan');
+
+    Route::get('/vDatabuku', [App\Http\Controllers\PetugasController::class, 'vDatabuku' ])->name('v_databuku');
+
+    Route::get('/vDaftarbuku', [App\Http\Controllers\PetugasController::class, 'vDaftarbuku' ])->name('v_daftarbuku');
+
+    Route::get('/profilePetugas', [App\Http\Controllers\PetugasController::class, 'profilePetugas' ])->name('profilePetugas');
     
 
 });
 
 Route::group(['middleware'=>['auth','CheckLevel:pengunjung']], function(){
     Route::get('/pinjam', [App\Http\Controllers\PengunjungController::class, 'index' ])->name('pinjam');
-    
+    Route::get('/profile-pengunjung', [App\Http\Controllers\PengunjungController::class, 'profilePengunjung' ])->name('profile-pengunjung');
+    Route::get('/loanhistory-pengunjung', [App\Http\Controllers\PengunjungController::class, 'loanHistory' ])->name('loanhistory-pengunjung');
+
 });
+
+
 
 

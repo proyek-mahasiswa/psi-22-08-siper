@@ -31,6 +31,9 @@ class AdminController extends Controller
         return view('admin.admin-dashboard-petugas');
     }
 
+    public function profileAdmin(){
+        return view('admin.profile-admin');
+    }
     /**
      * Show the form for creating a new resource.
      *
