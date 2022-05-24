@@ -63,7 +63,7 @@
   <input type="submit" class="btn btn-success" value="Tambah Petugas +" href="#" data-target="#insertpetugas" data-toggle="modal"></input>
       <div class="row">
       
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -89,67 +89,10 @@
 
 </table>
 
-      </div>
-  </div>
+    </div>
+</div>
    
-       
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-
-    <table border="0" align="center" width="1000px">
-        
-
-  
-    
-    
-        <tr class="nama-aktif">
-            <th width="200px">Nama</th><div class="addPetugas">
-            <input type="submit" class="btn btn-success" value="Tambah Petugas" href="#" data-target="#insertpetugas" data-toggle="modal"></input>
-        </div>
-            <th width="450px">Status</th>
-        </tr>
-        <tr>
-          
-            @foreach ($petugas as $row)
-        
-            <td><a href="profil-petugas" class="href">{{$row->name}}</a></td>
-            <td>
-                <ul>
-                    <input type="submit" class="btn btn-warning" value="Edit" href="#" data-target="#edit-petugas{{$row->id}}" data-toggle="modal"></input>
-                    <input type="submit" class="btn btn-danger" value="Hapus" href="#" data-target="#hapuspetugas" data-toggle="modal"></input>
-            </td>
-            </ul>
-        </tr>
-        @endforeach
-    
-    </table> -->
-
    
-
-
-
-
     <!-- Edit Petugas  -->
     @foreach($petugas as $row)
     <div class="modal fade" id="edit-petugas{{$row->id}}" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -250,7 +193,7 @@
                             </div>
 
                          
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="suksestambah">Submit</button>
                             </form>
 
                     </form>
@@ -258,6 +201,8 @@
             </div>
         </div>
     </div>
+
+    
   
     <!--Hapus Petugas-->
                         <div class="modal fade" id="hapuspetugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -279,37 +224,16 @@
                             </div>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--Footer -->
+<footer>
+  <div class="text-center">
+    <div class="container p-2"></div>
+    <div class="text-center p-1">
+      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+    <div class="text-center p-1">
+      Contact Us On : xxxxxxxx </div>
+  </div>
+  </footer>
    
 </body>
 

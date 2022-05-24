@@ -46,11 +46,11 @@
       <center>
        <h1>Profil Perpustakaan</h1>
        <h2>SMA Swasta HKBP 2 Tarutung</h2> 
-       <hr class="line">
+   
       </center>
 
 <!-- search bar-->
-<nav class="navbar navbar-light">
+<!-- <nav class="navbar navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand"></a>
       <form class="d-flex">
@@ -60,9 +60,63 @@
       </form>
     </div>
   </nav>
-  <br /><br />
+  <br /> -->
   <!--end of search bar-->
-  <table border="1px" align="center" width="80%">
+  <div class="container">
+  <div class="row"><nav style="margin-left:400px; margin-bottom:40px;"class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand"></a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+  </nav>
+    <div class="col-sm">
+    <td>
+
+
+
+    <ul class="list-group">
+  <li class="list-group-item " aria-current="true"><a class="nav-link active" aria-current="page" href="{{ route('v_pengunjung') }}">Pengunjung</a></li>
+  <li class="list-group-item "><a class="nav-link" href="{{ route('v_peminjaman') }}">Peminjaman</a></li>
+  <li class="list-group-item"><a class="nav-link" href="{{ route('v_pengembalian') }}">Pengembalian </a></li>
+  <li class="list-group-item"><a class="nav-link" href="{{ route('v_perpanjangan') }}">Perpanjangan </a></li>
+  <li class="list-group-item active"><a class="nav-link" href="{{ route('v_databuku') }}">Data Buku </a></li>
+  <li class="list-group-item">  <a class="nav-link" href="{{ route('v_daftarbuku') }}">Daftar Buku </a></li>
+</ul>
+
+</div>
+    <div class="col">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Judul</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Biologi</td>
+      <td>Dipinjam</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>
+    
+  
+    </div>
+  <!-- <table border="1px" align="center" width="80%">
  
     <td><ul class="nav flex-column">
         <li class="nav-item">
@@ -93,7 +147,7 @@
             <th>Keterangan</th>
   </td>
         
-</td>
+</td> -->
 
 
   <!-- <table class="table table-bordered" >
@@ -127,8 +181,11 @@
         </tbody>
   </table> -->
   </table>
-
+      <!--Footer -->
+  
   </body>
+
+
 </html>
 
 

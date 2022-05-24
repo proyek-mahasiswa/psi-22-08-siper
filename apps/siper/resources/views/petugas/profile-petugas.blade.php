@@ -86,5 +86,17 @@
               <a type="button" class="btn btn-secondary" href="home" role="button"> Back </a>
                 </div>
       </div>
+
+      <footer>
+  <div class="text-center">
+    <div class="container p-2"></div>
+    <div class="text-center p-1">
+      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+    <div class="text-center p-1">
+      Contact Us On : xxxxxxxx </div>
+  </div>
+  </footer>
     </body>
+    <!--Footer -->
+
     </html>

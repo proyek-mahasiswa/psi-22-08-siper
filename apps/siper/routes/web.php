@@ -82,10 +82,13 @@ Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
 
     Route::get('/tambahpetugas', [App\Http\Controllers\AdminController::class, 'tambahpetugas'])->name('tambahpetugas');
     Route::post('/insertpetugas', [App\Http\Controllers\AdminController::class, 'insertpetugas'])->name('insertpetugas');
+
+   
 });
 
 Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
-    Route::get('/viewPengunjung', [App\Http\Controllers\PetugasController::class, 'index' ])->name('viewpengunjung');
+    Route::get('/viewPengunjung', [App\Http\Controllers\PetugasController::class, 'index' ])->name('viewPengunjung');
+    
     Route::get('/vPengunjung', [App\Http\Controllers\PetugasController::class, 'vPengunjung' ])->name('v_pengunjung');
 
     Route::get('/vPeminjaman', [App\Http\Controllers\PetugasController::class, 'vPeminjaman' ])->name('v_peminjaman');
@@ -101,6 +104,11 @@ Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
     Route::get('/profilePetugas', [App\Http\Controllers\PetugasController::class, 'profilePetugas' ])->name('profilePetugas');
 
     Route::post('/insertbuku', [App\Http\Controllers\PetugasController::class, 'insertbuku'])->name('insertbuku');
+
+    Route::post('/editbuku', [App\Http\Controllers\PetugasController::class, 'editbuku'])->name('editbuku');
+
+    Route::post('/hapusbuku', [App\Http\Controllers\PetugasController::class, 'hapusbuku'])->name('hapusbuku');
+  
     
      
 });
@@ -109,6 +117,7 @@ Route::group(['middleware'=>['auth','CheckLevel:pengunjung']], function(){
     Route::get('/pinjam', [App\Http\Controllers\PengunjungController::class, 'index' ])->name('pinjam');
     Route::get('/profile-pengunjung', [App\Http\Controllers\PengunjungController::class, 'profilePengunjung' ])->name('profile-pengunjung');
     Route::get('/loanhistory-pengunjung', [App\Http\Controllers\PengunjungController::class, 'loanHistory' ])->name('loanhistory-pengunjung');
+    Route::get('/perpanjang-waktu', [App\Http\Controllers\PengunjungController::class, 'perpanjangwaktu' ])->name('perpanjang-waktu');
 
 });
 

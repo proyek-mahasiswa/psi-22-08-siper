@@ -18,15 +18,19 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->Petugas=new Petugas();
+        $this->User= new User();
         $this->middleware('auth');
     }
 
     public function index()
     {
-        $data = Petugas::all();
-        return view('admin.admin-dashboard-pengunjung',compact('data'));
+        $data = ['pengunjung'=> $this->User->viewPengunjung(),
+    ];
+        return view('admin.admin-dashboard-pengunjung', $data);
     
     }
+
+
 
     public function indexBook(){
         return view('admin.admin-status-buku');
@@ -82,7 +86,7 @@ class AdminController extends Controller
            
         ]);
         $data->save();
-         return redirect()->route('admin-dashboard-petugas')->with('success','Data berhasil ditambahkan');
+         return redirect()->route('admin-dashboard-petugas');
        
     }
 

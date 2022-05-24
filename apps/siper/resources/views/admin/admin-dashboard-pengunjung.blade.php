@@ -65,7 +65,7 @@
     
         <h1 class="text-center mb-4">Data Pengunjung</h1>
         <div class="container ">
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -78,14 +78,17 @@
   <tbody>
   
   <tr>
+  @foreach ($pengunjung as $row)
       <th scope="row"></th>
-      <td><a href="">Halo</a></td>
+      
+      <td><a href="" data-target="#lihatprofil" data-toggle="modal">{{$row->name}}</a></td>
       <td></td>
       <td>
                     <input type="submit" class="btn btn-danger" value="Hapus" href="#" data-target="#hapuspengunjung" data-toggle="modal"></input> 
       </td>
+   
     </tr>
-
+    @endforeach
   </tbody>
 
 </table>
@@ -98,9 +101,61 @@
 
   </div>
 
+<!-- Lihat Petugas  -->
+
+<div class="modal fade" id="lihatprofil" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">Profil Pengunjung</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <form action="{{route('insertpetugas')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                             <p>{{$row->username}}</p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                               <p>{{$row->name}}</p>
+                             
+                            </div>
 
 
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                               <p>{{$row->email}}</p>
+                             
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">No Telepon</label>
+                             <p>{{$row->no_telepon}}</p>
+                             
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <p>{{$row->password}}</p>
+                            </div>
+
+                         
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" >
+                        <span aria-hidden="true">Close</span>
+                    </button>
+                            <!-- <a href="admin-dashboard-pengunjung" type="submit" class="btn btn-primary">Selesai</a> -->
+                            </form>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
