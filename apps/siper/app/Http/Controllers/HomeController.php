@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Petugas;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -30,8 +31,10 @@ class HomeController extends Controller
     {
         // return view('homepage_pengunjung');
         if(Auth::user()->level == 'pengunjung'){
-           return view('pengunjung.homepage_pengunjung');
-
+            $buku = DB::table('buku') -> get ();
+             //dd($buku);
+             return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
+          
         }
         else if(Auth::user()->level == 'petugas'){
             $data = ['pengunjung'=> $this->User->viewPengunjung(),

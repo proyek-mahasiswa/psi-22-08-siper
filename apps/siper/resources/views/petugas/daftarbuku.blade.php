@@ -197,8 +197,7 @@
                     </div>
                 
                 <div class="modal-body">
-           
-                    <form action="{{route('editbuku')}}" method="post" enctype="multipart/form-data">
+
                         @csrf
                         <input type="hidden" name="id" value="{{$row->id}}">
                         <div class="mb-5">

@@ -75,25 +75,23 @@
 <br>
 
 
+@foreach ($buku as $buku)
 <div id="scrollspyHeading1">
 <div class="row row-cols-1 row-cols-md-4 ">
   <div class="col">
     <div class="card">
       <img src="/images/book1.jpeg" class="card-img-top" alt="rim1">
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"> Nama Pengarang : </p>
-        <p class="card-text"> Rak Buku :</p>
-       
-      <a href="{{ route('pinjam') }}" class="btn btn-primary">Detail</a>
-     
-       
-         </div>
-
+        <h5 class="card-title"> {{$buku->judul}} </h5>
+        <p class="card-text"> Pengarang : {{$buku->pengarang}} </p> 
+        <p class="card-text"> Rak Buku : {{$buku->rak}} </p> 
+      <!--<a href="{ { url('pinjam',$buku->id) }}" class="btn btn-primary">Detail</a> -->
+      <a href="/pinjam/{{ $buku->id }}" class="btn btn-primary">Detail</a>
+         </div> 
       </div>
     </div>
   </div>
-  
+ @endforeach 
   
 </div> <br>
 
