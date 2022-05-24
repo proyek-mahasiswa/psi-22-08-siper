@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class Buku extends Model
 {
-    use HasFactory;
+    protected $table='buku';
 
     protected $fillable = [
         'judul',
@@ -17,7 +17,6 @@ class Buku extends Model
         'penerbit',
         'tahunterbit',
         'rak',
-        'gambar',
 
     ];
 

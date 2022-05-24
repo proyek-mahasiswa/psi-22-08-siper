@@ -44,15 +44,16 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
-.navbar-brand:hover{
-   color: coral;
-}
-
-
-.nav-link:hover{
-   color: coral;
-
-}
+.nav-link{
+    color:rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+ }
+ 
+ .nav-link:hover{
+    color: coral;
+   
+ 
+ }
 
 
 .title {
@@ -94,4 +95,9 @@
     color :white;
  }
  
- 
+ footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }

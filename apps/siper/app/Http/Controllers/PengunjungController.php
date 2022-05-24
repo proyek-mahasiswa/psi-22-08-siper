@@ -29,6 +29,10 @@ class PengunjungController extends Controller
         return view('pengunjung.loanhistory-pengunjung');
     }
 
+    public function perpanjangwaktu(){
+        return view('pengunjung.perpanjangwaktu_pengunjung');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

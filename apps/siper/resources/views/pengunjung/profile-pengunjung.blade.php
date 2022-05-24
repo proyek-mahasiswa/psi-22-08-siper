@@ -79,10 +79,79 @@
   <br> <br>
   <center>
   <div class="button-update-profile-pengunjung">
-              <a type="submit" class="btn btn-primary" href="" role="button"> Update </a>
+              <a type="submit" class="btn btn-primary" href="" role="button" data-target=#editprofil data-toggle="modal"> Update </a>
               <a type="button" class="btn btn-secondary" href="home" role="button"> Back </a>
                 </div>
       </div>
-      
+      </center>
+<!-- Tambah Petugas  -->
+
+<div class="modal fade" id="editprofil" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">Update</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+             
+                <div class="modal-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-4">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control"   name="name" id="exampleInputName1" aria-describedby="emailHelp">
+                             
+                            </div>
+                            <div class="mb-4">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control"   name="name" id="exampleInputName1" aria-describedby="emailHelp">
+                             
+                            </div>
+
+
+                            <div class="mb-4">
+                                <label for="exampleInputEmail1" class="form-label">Email </label>
+                                <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                             
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="exampleInputEmail1" class="form-label">No Telepon</label>
+                                <input type="number" class="form-control" name="no_telepon" id="exampleInputNotelp" aria-describedby="emailHelp">
+                             
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                            </div>
+
+                         
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            
+
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!--Footer -->
+<footer>
+  <div class="text-center">
+    <div class="container p-2"></div>
+    <div class="text-center p-1">
+      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+    <div class="text-center p-1">
+      Contact Us On : xxxxxxxx </div>
+  </div>
+  </footer>
     </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     </html>

@@ -41,12 +41,13 @@
  color: coral;
 }
 .nav-link{
- color:white;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+  color:rgb(0, 0, 0);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
 .nav-link:hover{
- color: coral;
+  color: coral;
+ 
 
 }
 
@@ -105,8 +106,8 @@ footer{
 }
 
 .tambahb{
-  margin-top: -46px;
-  margin-left: 120px;
+  margin-top: -47px;
+  margin-left: 110px;
   position: relative;
 }
 

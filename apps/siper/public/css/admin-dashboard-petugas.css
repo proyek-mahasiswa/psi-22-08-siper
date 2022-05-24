@@ -44,14 +44,15 @@
    color: coral;
 }
 .nav-link{
-   color:white;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
-}
-
-.nav-link:hover{
-   color: coral;
-
-}
+    color:rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+ }
+ 
+ .nav-link:hover{
+    color: coral;
+   
+ 
+ }
 
 .title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -137,3 +138,9 @@ table td h1{
     position: relative;
     width: 100%;
 }
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }

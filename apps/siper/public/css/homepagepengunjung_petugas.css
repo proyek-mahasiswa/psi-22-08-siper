@@ -15,25 +15,23 @@
 .navbar-brand{
     color: white;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 .navbar-brand:hover{
    color: coral;
 }
 .nav-link{
-   color:white;
+   color:rgb(0, 0, 0);
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
 }
 
 .nav-link:hover{
-   color: rgb(255, 255, 255);
-   background-color: rgb(182, 182, 182);
+   color: coral;
+  
 
 }
-.nav-link:active{
-    color: coral;
-   
-}
+
 
 
 
@@ -87,3 +85,10 @@ table td ul.nav a{
     width: 50%;
     position: relative;
 }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }

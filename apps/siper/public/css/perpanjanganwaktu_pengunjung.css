@@ -26,24 +26,23 @@
     
 }
 .name {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
-    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 280px;
 }
 .line{
     
     margin-top: 30px;
     width:60%;
-   
 }
-
 .navbar-brand{
-     color: white;
-     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar-brand:hover{
-    color: coral;
+    color:coral;
 }
+
 .nav-link{
     color:rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
@@ -51,11 +50,10 @@
  
  .nav-link:hover{
     color: coral;
-   
- 
  }
+
 .title {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
     margin-top: 60px;
 }
 .lines{
@@ -94,9 +92,9 @@
  }
  
  footer{
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     height: 30px;
- }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }
  

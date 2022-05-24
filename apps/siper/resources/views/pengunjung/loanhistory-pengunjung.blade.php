@@ -62,7 +62,7 @@
       <h5 class="card-title">The Midnight Library</h5>
       <h7 class="card-title">29 April 2022 - 14 Mei 2022 </h7>
       <br>  <br>
-      <a href="perpanjangwaktu_pengunjung.html" class="btn btn-primary">Perpanjang Waktu</a>
+      <a href="perpanjang-waktu" class="btn btn-primary">Perpanjang Waktu</a>
     </div>
   </div>
 </div>
