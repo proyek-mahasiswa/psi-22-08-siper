@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\Buku;
 class PengunjungController extends Controller
 {
     /**
@@ -16,8 +17,10 @@ class PengunjungController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index($id)
     {
+        $buku = Buku::find($id);
+        dd($buku);
         return view('pengunjung.loaningpage_pengunjung');
     }
 
@@ -33,6 +36,12 @@ class PengunjungController extends Controller
         return view('pengunjung.perpanjangwaktu_pengunjung');
     }
 
+    public function show()
+    {
+        $buku = DB::table('buku') -> get ();
+        //dd($buku);
+       return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -60,10 +69,7 @@ class PengunjungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
