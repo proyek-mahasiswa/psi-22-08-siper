@@ -23,23 +23,25 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="homepage_admin.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="home">Home</a>
               </li>
                 
                
-    
-                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-                         
-                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a href="profile-petugas.html"class="dropdown-item" href="#">Petugas</a></li>
-                                <li><a href="loanhistory_admin.html" class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                               </ul>
-                            </li>
-          </div>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a href="profilePetugas"class="dropdown-item" >Profil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Logout</a></li>
+                         </a>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                         @csrf
+                         </form><li>
+                        </ul>
+                    </li>
+            </div>
         </div>
-      </nav>
+    </nav>
 
       <center>
        <h1>Profil Perpustakaan</h1>

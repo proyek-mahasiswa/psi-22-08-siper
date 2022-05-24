@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Petugas;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,12 +17,14 @@ class AdminController extends Controller
      */
     public function __construct()
     {
+        $this->Petugas=new Petugas();
         $this->middleware('auth');
     }
 
     public function index()
     {
-        return view('admin.admin-dashboard-pengunjung');
+        $data = Petugas::all();
+        return view('admin.admin-dashboard-pengunjung',compact('data'));
     
     }
 
@@ -28,7 +33,14 @@ class AdminController extends Controller
     }
 
     public function indexPetugas(){
-        return view('admin.admin-dashboard-petugas');
+        $data = ['petugas'=> $this->Petugas->viewPetugas(),
+        ];
+        return view('admin.admin-dashboard-petugas', $data);
+        // $pass = $data['petugas'][0]->password;
+        // $pass = Hash::make($pass);
+        // dd($pass);
+       
+     
     }
 
     public function profileAdmin(){
@@ -39,10 +51,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showPetugas()
-    {
-       
-    }
+    // public function showpetugas()
+    // {
+    //    $data = Petugas::all();
+    //    return view('admin.admin-dashboard-petugas',compact('data'));   
+    //  }
 
     /**
      * Store a newly created resource in storage.
@@ -50,11 +63,29 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function tambahpetugas()
     {
-        
-
+        return view('admin.tambahpetugas');
+    //     
     }
+    
+    public function insertpetugas(Request $request){
+
+        // dd($request->all());
+        $data = User::create([
+            'username' => $request->username,
+            'name' => $request->name,
+            'email' => $request->email,
+            'no_telepon' => $request-> no_telepon,
+            'password' => Hash::make($request->password),
+            'level'=> "petugas",
+           
+        ]);
+        $data->save();
+         return redirect()->route('admin-dashboard-petugas')->with('success','Data berhasil ditambahkan');
+       
+    }
+
 
     /**
      * Display the specified resource.

@@ -36,7 +36,6 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                         <li><a href="profilePetugas"class="dropdown-item" >Profil</a></li>
-                        <li><a href="loanhistory_pengunjung.html" class="dropdown-item" href="#">Riwayat</a></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">Logout</a></li>
                          </a>
@@ -99,6 +98,7 @@
       </ul>
     
       </td>
+      
       <td class=cardForm>
 
             <div class="card mb-3" style="max-width: 490px;">
@@ -110,7 +110,6 @@
                 <div class="card-body">
                 <h5 class="card-title">Pengunjung</h5>
                 <p class="card-text">Nama : Tiara</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
             </div>
@@ -123,4 +122,8 @@
     </td>
     </table>
   </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </html>

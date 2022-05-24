@@ -25,12 +25,6 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading1">Book</a>
-              </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
-                  </li>
 
                   
                      <li class="nav-item dropdown">
