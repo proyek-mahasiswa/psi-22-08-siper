@@ -90,6 +90,19 @@ class AdminController extends Controller
        
     }
 
+    public function editpetugas(){
+        $user= User::find(Request()->id);
+        $user->username=Request()-> username;
+        $user->name=Request()-> name;
+        $user->email=Request()-> email;
+        $user->no_telepon=Request()-> no_telepon;
+        $user->password=Request()-> password;
+        
+        $user->save();
+        return redirect()->route('admin-dashboard-petugas');
+     
+    }
+
 
     /**
      * Display the specified resource.

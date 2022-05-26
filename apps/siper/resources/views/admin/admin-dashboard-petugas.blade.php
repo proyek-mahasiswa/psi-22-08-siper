@@ -106,8 +106,9 @@
                 </div>
                 
                 <div class="modal-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route ('editpetugas')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{$row->id}}">
                         <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control"  value="{{$row->username}} " name="username" id="exampleInputUsername1" aria-describedby="emailHelp">
@@ -121,7 +122,7 @@
 
 
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
                                 <input type="text" class="form-control" name="email" value="{{$row->email}}" id="exampleInputEmail1" aria-describedby="emailHelp">
                              
                             </div>
@@ -138,7 +139,7 @@
                             </div>
 
                          
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" >Submit</button>
                             </form>
 
                     </form>

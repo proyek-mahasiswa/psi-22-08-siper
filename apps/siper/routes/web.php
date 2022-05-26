@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PengunjungController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,7 @@ Route::get('/petugas_profile]', function () {
 
 Auth::routes();
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/register', 'App\Http\Controllers\RegisterController@index');
 Route::post('/create_account', 'App\Http\Controllers\RegisterController@storeRegister');
@@ -67,6 +69,9 @@ Route::post('/create_account', 'App\Http\Controllers\RegisterController@storeReg
 Route::post('/postlogin', 'App\Http\Controllers\LoginController@postLogin');
 Auth::routes();
 
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
@@ -78,7 +83,7 @@ Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
 
     Route::get('/tambahpetugas', [App\Http\Controllers\AdminController::class, 'tambahpetugas'])->name('tambahpetugas');
     Route::post('/insertpetugas', [App\Http\Controllers\AdminController::class, 'insertpetugas'])->name('insertpetugas');
-
+ 
    
 });
 
@@ -104,18 +109,22 @@ Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
     Route::post('/editbuku', [App\Http\Controllers\PetugasController::class, 'editbuku'])->name('editbuku');
 
     Route::post('/hapusbuku', [App\Http\Controllers\PetugasController::class, 'hapusbuku'])->name('hapusbuku');
+
+    Route::get('/searchbuku', [App\Http\Controllers\PetugasController::class, 'searchbuku'])->name('searchbuku');
   
     
      
 });
 
 Route::group(['middleware'=>['auth','CheckLevel:pengunjung']], function(){
-    //Route::get('/home', [PengunjungController::class, 'show' ])->name('show'); gkdipakeee
-    Route::get('/pinjam', [PengunjungController::class, 'index' ])->name('pinjam');
-    
-    Route::get('/profile-pengunjung', [PengunjungController::class, 'profilePengunjung' ])->name('profile-pengunjung');
-    Route::get('/loanhistory-pengunjung', [PengunjungController::class, 'loanHistory' ])->name('loanhistory-pengunjung');
-    Route::get('/perpanjang-waktu', [PengunjungController::class, 'perpanjangwaktu' ])->name('perpanjang-waktu');
+  
+    Route::get('/pinjam', [App\Http\Controllers\PengunjungController::class, 'index' ])->name('pinjam');
+    Route::get('/search', [App\Http\Controllers\PengunjungController::class, 'search' ])->name('search');
+    Route::get('/profile-pengunjung', [App\Http\Controllers\PengunjungController::class, 'profilePengunjung' ])->name('profile-pengunjung');
+    Route::get('/loanhistory-pengunjung', [App\Http\Controllers\PengunjungController::class, 'loanHistory' ])->name('loanhistory-pengunjung');
+    Route::get('/perpanjang-waktu', [App\Http\Controllers\PengunjungController::class, 'perpanjangwaktu' ])->name('perpanjang-waktu');
+
+    Route::post('/editprofile', [App\Http\Controllers\PetugasController::class, 'editprofile'])->name('editprofile');
 
 });
 

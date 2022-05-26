@@ -55,19 +55,20 @@
     
 
       <!-- search bar-->
-      
+      <div class="con">
       <nav class="navbar navbar-light ">
         <div class="container-fluid">
           <a class="navbar-brand"></a>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    
+          <form class="d-flex" action="/searchbuku" method="get">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+ <span class="input-group-prepend">
             <button type="submit" class="btn btn-primary">Search</button>
-    
+</span>
           </form>
         </div>
       </nav>
     
+      </div>
     <!--end of search bar-->
     
     <!-- data buku-->
@@ -94,7 +95,7 @@
         <div class="col">
           <br>
         <div class="card">
-              <img src="/images/book1.jpeg" class="card-img-top" alt="rim1">
+              <img src="/img/book.png" class="card-img-top" alt="Tidak ada gambar">
               <div class="card-body">
                 <h5 class="card-title">{{$row->judul}}</h5>
                 <p class="card-text"> Penerbit : {{$row->penerbit}}</p>
@@ -197,7 +198,8 @@
                     </div>
                 
                 <div class="modal-body">
-
+           
+                    <form action="{{route('editbuku')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id" value="{{$row->id}}">
                         <div class="mb-5">

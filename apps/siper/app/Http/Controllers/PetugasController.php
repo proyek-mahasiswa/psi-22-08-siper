@@ -117,7 +117,11 @@ class PetugasController extends Controller
         return redirect()->back();
     }
 
-
+    public function searchbuku(Request $request){
+        $search = $request->get('search');
+        $buku = DB::table ('buku')->where ('judul', 'like', '%'.$search.'%')->paginate();
+        return view('petugas.daftarbuku',['buku'=> $buku]);
+    }
 
 
 
