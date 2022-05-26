@@ -83,6 +83,7 @@ Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
 
     Route::get('/tambahpetugas', [App\Http\Controllers\AdminController::class, 'tambahpetugas'])->name('tambahpetugas');
     Route::post('/insertpetugas', [App\Http\Controllers\AdminController::class, 'insertpetugas'])->name('insertpetugas');
+    Route::post('/editpetugas', [App\Http\Controllers\AdminController::class, 'editpetugas'])->name('editpetugas');
  
    
 });
@@ -111,6 +112,8 @@ Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
     Route::post('/hapusbuku', [App\Http\Controllers\PetugasController::class, 'hapusbuku'])->name('hapusbuku');
 
     Route::get('/searchbuku', [App\Http\Controllers\PetugasController::class, 'searchbuku'])->name('searchbuku');
+
+    Route::get('/searchpengunjung', [App\Http\Controllers\PetugasController::class, 'searchpengunjung'])->name('searchpengunjung');
   
     
      

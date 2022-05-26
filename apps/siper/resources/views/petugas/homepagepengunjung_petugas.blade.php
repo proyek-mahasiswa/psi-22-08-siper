@@ -61,8 +61,8 @@
           <div class="row"><nav style="margin-left:400px; margin-bottom:40px;"class="navbar navbar-light">
               <div class="container-fluid">
                 <a class="navbar-brand"></a>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <form class="d-flex" method="get" action="/searchpengunjung">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search" />
             
                   <button type="submit" class="btn btn-primary">Search</button>
                 </form>

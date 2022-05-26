@@ -46,16 +46,9 @@
     </div>
   </nav>
   
-  <!-- body -->
-  <!-- <center>
-    <header id="background">
-<br> <br> <br>
-  <-- search bar-->
 
 </form>
-<!--end of search bar-->
 
-<!-- data buku-->
 
 
 <center>
