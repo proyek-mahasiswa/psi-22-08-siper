@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Http\Models\Buku;
+use app\Http\Models\User;
 use Illuminate\Support\Facades\DB;
-use App\Models\Buku;
+
+
 class PengunjungController extends Controller
 {
     /**
@@ -15,14 +18,19 @@ class PengunjungController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+  
+     
+   
     }
     
     public function index($id)
     {
         $buku = Buku::find($id);
         dd($buku);
+
         return view('pengunjung.loaningpage_pengunjung');
     }
+
 
     public function profilePengunjung(){
         return view('pengunjung.profile-pengunjung');
@@ -36,12 +44,6 @@ class PengunjungController extends Controller
         return view('pengunjung.perpanjangwaktu_pengunjung');
     }
 
-    public function show()
-    {
-        $buku = DB::table('buku') -> get ();
-        //dd($buku);
-       return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -69,8 +71,17 @@ class PengunjungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+    public function show()
+    {
+      $buku = DB::table('buku') -> get();
+      return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
+    }
 
+    public function search(Request $request){
+        $search = $request->get('search');
+        $buku = DB::table ('buku')->where ('judul', 'like', '%'.$search.'%')->paginate(4);
+        return view('pengunjung.homepage_pengunjung',['buku'=> $buku]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -89,7 +100,7 @@ class PengunjungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,)
     {
         //
     }

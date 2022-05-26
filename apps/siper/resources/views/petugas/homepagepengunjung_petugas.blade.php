@@ -56,90 +56,59 @@
    
       </center>
 
-       <!-- search bar-->
-<!--       
-    <nav class="navbar navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand"></a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-    
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </div>
-  </nav>
- 
-<br> -->
-  <!--end of search bar-->
 
   <div class="container">
-  <div class="row"><nav style="margin-left:400px; margin-bottom:40px;"class="navbar navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand"></a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-    
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </div>
-  </nav>
-    <div class="col-sm"  >
-    <td >
+          <div class="row"><nav style="margin-left:400px; margin-bottom:40px;"class="navbar navbar-light">
+              <div class="container-fluid">
+                <a class="navbar-brand"></a>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+              </div>
+          </nav>
+            <div class="col-sm"  >
+        <td >
 
 
 
-    <ul class="list-group" >
-  <li class="list-group-item active"  aria-current="true"><a class="nav-link active" aria-current="page" href="{{ route('v_pengunjung') }}">Pengunjung</a></li>
-  <li class="list-group-item"><a class="nav-link" href="{{ route('v_peminjaman') }}">Peminjaman</a></li>
-  <li class="list-group-item"><a class="nav-link" href="{{ route('v_pengembalian') }}">Pengembalian </a></li>
-  <li class="list-group-item"><a class="nav-link" href="{{ route('v_perpanjangan') }}">Perpanjangan </a></li>
-  <li class="list-group-item"><a class="nav-link" href="{{ route('v_databuku') }}">Data Buku </a></li>
-  <li class="list-group-item">  <a class="nav-link" href="{{ route('v_daftarbuku') }}">Daftar Buku </a></li>
-</ul>
-        <!-- <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('v_pengunjung') }}">Pengunjung</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('v_peminjaman') }}">Peminjaman</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('v_pengembalian') }}">Pengembalian </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_perpanjangan') }}">Perpanjangan </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_databuku') }}">Data Buku </a>
-          </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_daftarbuku') }}">Daftar Buku </a>
-          </li>
-        </li>
-      </ul> -->
-    
+                      <ul class="list-group" >
+                    <li class="list-group-item active"  aria-current="true"><a class="nav-link active" aria-current="page" href="{{ route('v_pengunjung') }}">Pengunjung</a></li>
+                    <li class="list-group-item"><a class="nav-link" href="{{ route('v_peminjaman') }}">Peminjaman</a></li>
+                    <li class="list-group-item"><a class="nav-link" href="{{ route('v_pengembalian') }}">Pengembalian </a></li>
+                    <li class="list-group-item"><a class="nav-link" href="{{ route('v_perpanjangan') }}">Perpanjangan </a></li>
+                    <li class="list-group-item"><a class="nav-link" href="{{ route('v_databuku') }}">Data Buku </a></li>
+                    <li class="list-group-item">  <a class="nav-link" href="{{ route('v_daftarbuku') }}">Daftar Buku </a></li>
+                  </ul>
+                        
+                      
 
-    </div>
-   
-    <div class="col"> 
-    @foreach ($pengunjung as $row)
-    <div class="card" style="width: 18rem;">
-                <img src="img/avatar.png" class="card-img-top" alt="" style="width:20px">
-                <div class="card-body">
-                  <h5 class="card-title">{{$row->name}}</h5>
-                  <h6 class="card-text">{{$row->username}}</h6>
-    
-  
-    </div>
+                      </div>
+                  
+                  <div class="col"> 
+                      @foreach ($pengunjung as $row)
+                      <div class="card" style="width: 18rem;">
+                                  <img src="img/avatar.png" class="card-img-top" alt="" style="width:20px">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{$row->name}}</h5>
+                                    <h6 class="card-text">{{$row->username}}</h6>
+                      
+                    
+                                    </div>
 
 
-  </div>
- 
-  <a href="#" class="btn btn-primary" style="margin-left:450px; margin-top:-100px;" data-target="#detailpengunjung" data-toggle="modal">Details</a>
+                          </div>
+                  
+                  <a href="#" class="btn btn-primary" style="margin-left:450px; margin-top:-100px;" data-target="#detailpengunjung" data-toggle="modal">Details</a>
   @endforeach
-  </td>
+          </td>
  
+          
+ 
+</div>
+
+
 
 
 <!--Details -->
@@ -200,63 +169,9 @@
 
 
 
-
-
-
-
-
-
-<!-- 
-  <table border="0px" align="center">
-    <td>
-        <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('v_pengunjung') }}">Pengunjung</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('v_peminjaman') }}">Peminjaman</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('v_pengembalian') }}">Pengembalian </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_perpanjangan') }}">Perpanjangan </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_databuku') }}">Data Buku </a>
-          </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('v_daftarbuku') }}">Daftar Buku </a>
-          </li>
-        </li>
-      </ul>
-    
-      </td> -->
-<!-- 
-      <td class=cardForm>
-
-            <div class="card mb-3" style="max-width: 490px;">
-                    <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://img2.pngdownload.id/20190807/gxp/kisspng-businessperson-avatar-user-profile-business-admini-5d4a5d51a0e693.2711748415651546416591.jpg" width="150x150" class="img-fluid rounded-start" alt="...">
-                    </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                <h5 class="card-title">Pengunjung</h5>
-                <p class="card-text">Nama : Tiara</p>
-                </div>
-            </div>
-            </div>
-        </div> -->
-
-
-          
-    </td>
-    </table>
   </body>
+  
 
-  <!--Footer -->
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -264,5 +179,4 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </html>

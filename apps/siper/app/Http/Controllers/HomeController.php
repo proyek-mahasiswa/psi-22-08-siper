@@ -32,9 +32,8 @@ class HomeController extends Controller
         // return view('homepage_pengunjung');
         if(Auth::user()->level == 'pengunjung'){
             $buku = DB::table('buku') -> get ();
-             //dd($buku);
-             return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
-          
+           return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
+
         }
         else if(Auth::user()->level == 'petugas'){
             $data = ['pengunjung'=> $this->User->viewPengunjung(),

@@ -65,7 +65,7 @@
     <table class="table table-striped table-hover" >
   <thead>
     <tr>
-      <th scope="col">Gambar</th>
+      <th scope="col">Lainnya</th>
       <th scope="col"></th>
       <th scope="col">Buku</th>
       <th scope="col">Keterangan</th>
@@ -73,8 +73,8 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td><input type="submit" class="btn btn-success" value="Details" href="#" data-target="#detail" data-toggle="modal"></input></td>
+      <th scope="row"><input type="submit" class="btn btn-success" value="Details" href="#" data-target="#detail" data-toggle="modal"></input></th>
+      <td></td>
       <td>Judul Buku</td>
       <td></td>
     </tr>

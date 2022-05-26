@@ -12,7 +12,7 @@
   <body>
 
     <!-- navbar -->
-
+<div class="container">
   <nav class="navbar navbar-expand-lg navbar-white bg-blue fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="home">SIPER</a>
@@ -51,18 +51,8 @@
     <header id="background">
 <br> <br> <br>
   <-- search bar-->
-  
-  <nav class="navbar navbar-light ">
-    <div class="container-fluid">
-      <a class="navbar-brand"></a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
-        <button type="submit" class="btn btn-primary">Search</button>
-
-      </form>
-    </div>
-  </nav>
+</form>
 <!--end of search bar-->
 
 <!-- data buku-->
@@ -72,36 +62,47 @@
 <h2 class="name"> Sistem Informasi Perpustakaan SMA Swasta HKBP 2 Tarutung  </h2> 
 <hr class="line">
 </center>
-<br>
+
+<div class="row">
+  <div class="col-md-4">
+  <form class="form" method="get" action="/search">
+    <div class="form-group w-100 mb-3">
+        <label for="search" class="d-block mr-2">Pencarian</label>
+        <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan Judul Buku">
+        <span class="input-group-prepend">
+        <button type="submit" class="btn btn-primary mb-1">Search</button>
+        </span>
+        </div>
+    </div>
+</div>
+
 
 <div id="scrollspyHeading1">
-  <div class="row row-cols-1 row-cols-md-4 ">
-@foreach ($buku as $buku)
+<div class="row row-cols-1 row-cols-md-4 ">
+@foreach ($buku as $datas)
   <div class="col">
-    <br>
+<br>
     <div class="card">
-      <img src="/images/book1.jpeg" class="card-img-top" alt="rim1">
+      <img src="/img/book.png" class="card-img-top" alt="Tidak ada gambar">
       <div class="card-body">
-        <h5 class="card-title"> {{$buku->judul}} </h5>
-        <p class="card-text"> Pengarang : {{$buku->pengarang}} </p> 
-        <p class="card-text"> Rak Buku : {{$buku->rak}} </p> 
-      <!--<a href="{ { url('pinjam',$buku->id) }}" class="btn btn-primary">Detail</a> -->
-      <a href="/pinjam/{{ $buku->id }}" class="btn btn-primary">Detail</a>
-         </div> 
+        <h5 class="card-title">{{ $datas->judul}}</h5>
+        <p class="card-text"> Nama Pengarang : {{ $datas -> pengarang }} </p>
+        <p class="card-text"> Rak Buku : {{ $datas -> rak }}</p>
+       
+      <a href="/pinjam/{{ $datas->id }}" class="btn btn-primary">Detail</a>
+     
+       
+         </div>
+
       </div>
     </div>
- @endforeach 
+    @endforeach
+  </div>
+
   
 </div> 
-
+</div>
 <!--Footer -->
-<footer>
-  <div class="text-center">
-    <div class="text-center p-1">
-      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
-    <div class="text-center p-1">
-      Contact Us On : xxxxxxxx </div>
-  </div>
-</footer>
+
 </body>
 </html>

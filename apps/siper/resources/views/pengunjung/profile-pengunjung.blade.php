@@ -84,7 +84,7 @@
                 </div>
       </div>
       </center>
-<!-- Tambah Petugas  -->
+<!-- Update Modals  -->
 
 <div class="modal fade" id="editprofil" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -97,11 +97,11 @@
                 </div>
              
                 <div class="modal-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action=" {{ route('editprofile') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control"   name="name" id="exampleInputName1" aria-describedby="emailHelp">
+                                <input type="text" class="form-control"  value=" " name="name" id="exampleInputName1" aria-describedby="emailHelp">
                              
                             </div>
                             <div class="mb-4">
@@ -138,6 +138,7 @@
             </div>
         </div>
     </div>
+
 
       <!--Footer -->
 <footer>
