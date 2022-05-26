@@ -80,8 +80,8 @@
       <td>{{$row->name}}</td>
       <td></td>
       <td>
-      <input type="submit" class="btn btn-warning" value="Edit" href="#" data-target="#edit-petugas{{$row->id}}" data-toggle="modal"></input>
-                    <input type="submit" class="btn btn-danger" value="Hapus" href="#" data-target="#hapuspetugas" data-toggle="modal"></input> 
+      <input type="submit" class="btn btn-warning" value="Edit" href="" data-target="#edit-petugas{{$row->id}}" data-toggle="modal"></input>
+                    <input type="submit" class="btn btn-danger" value="Hapus" href="/editpetugas" data-target="#hapuspetugas" data-toggle="modal"></input> 
       </td>
     </tr>
     @endforeach

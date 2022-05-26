@@ -45,7 +45,7 @@
     </nav>
     
     <!-- body -->
-
+    <div class="container">
     <center>
        <h1>Profil Perpustakaan</h1>
        <h2>SMA Swasta HKBP 2 Tarutung</h2> 
@@ -108,7 +108,7 @@
       @endforeach
     </div>
   
-
+    </div>
   
 
     <!-- Modal Tambah Buku -->
