@@ -126,9 +126,10 @@
     <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h3 class="card-title">Nama</h3>
-    <h6 class="card-text">Username</h6>
-    
+    <h6 class="card-title">Nama : </h6>
+    <h6 class="card-text">Judul : </h6>
+    <h6 class="card-text">Tanggal Peminjaman : </h6>
+    <h6 class="card-text">Tanggal Pengembalian : </h6>
   
     </div>
    

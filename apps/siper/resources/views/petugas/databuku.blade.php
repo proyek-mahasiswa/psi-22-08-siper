@@ -103,13 +103,13 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Biologi</td>
-      <td>Dipinjam</td>
+      <td>Diterima</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
-      <td>@fat</td>
+      <td>Ditolak</td>
     </tr>
   </tbody>
 </table>

@@ -133,9 +133,7 @@
    
 
   </div>
-  <input href="#" class="btn btn-danger" style="margin-left:450px; margin-top:-105px; width:10%" value="Rusak"></input>
-  <input href="#" class="btn btn-warning" style="margin-left:380px; margin-top:-140px; width:10%" value="Hilang"></input>
-  <input href="#" class="btn btn-primary" style="margin-left:280px; margin-top:-175px; width:15%" value="Dikembalikan"></input>
+  <input href="#" class="btn btn-primary" style="margin-left:280px; margin-top:-175px; width:15%" value="Dikembalikan"></input> //button ini kalau di klik menghapus riwayat peminjaman
   </td>
 
 
