@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\Http\Models\Buku;
 use app\Http\Models\User;
+use App\Models\Buku as ModelsBuku;
+use App\Models\User as ModelsUser;
 use Illuminate\Support\Facades\DB;
 
 
@@ -18,29 +20,27 @@ class PengunjungController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-  
-     
-   
     }
-    
+
     public function index($id)
     {
-        $buku = Buku::find($id);
-        dd($buku);
-
-        return view('pengunjung.loaningpage_pengunjung');
+        $buku = ModelsBuku::where('id', $id)->first();
+        return view('pengunjung.loaningpage_pengunjung')->with(compact(['buku']));
     }
 
 
-    public function profilePengunjung(){
+    public function profilePengunjung()
+    {
         return view('pengunjung.profile-pengunjung');
     }
 
-    public function loanHistory(){
+    public function loanHistory()
+    {
         return view('pengunjung.loanhistory-pengunjung');
     }
 
-    public function perpanjangwaktu(){
+    public function perpanjangwaktu()
+    {
         return view('pengunjung.perpanjangwaktu_pengunjung');
     }
 
@@ -73,14 +73,15 @@ class PengunjungController extends Controller
      */
     public function show()
     {
-      $buku = DB::table('buku') -> get();
-      return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
+        $buku = DB::table('buku')->get();
+        return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $search = $request->get('search');
-        $buku = DB::table ('buku')->where ('judul', 'like', '%'.$search.'%')->paginate(4);
-        return view('pengunjung.homepage_pengunjung',['buku'=> $buku]);
+        $buku = DB::table('buku')->where('judul', 'like', '%' . $search . '%')->paginate(4);
+        return view('pengunjung.homepage_pengunjung', ['buku' => $buku]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -100,7 +101,7 @@ class PengunjungController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,)
+    public function update(Request $request)
     {
         //
     }
