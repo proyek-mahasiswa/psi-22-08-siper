@@ -71,43 +71,58 @@
         </center>
 <br> <br>
 
-<!-- Input Tanggal Peminjaman-->
-<center>
-<div class="row">
-    <div class="col-6">
-        <div class="mb-4">
-            <label for="inputTanggalAwal" class="form-label">Masukkan tanggal Peminjaman</label>
-            <input type="date" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp">
-            <!-- <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div> -->
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="mb-4">
-            <label for="inputTanggalAkhir" class="form-label">Masukkan tanggal Pengembalian</label>
-            <input type="date" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
-            <!-- <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div> -->
-        </div>
-    </div>
-</div>
-<center>
-<h3 class="title"> Ajukan Peminjaman ?  </h3> 
-<div class="button-pengajuan">
-            <a type="submit" class="btn btn-primary" href="loanhistory_pengunjung.html" role="button"> Ajukan </a>
-            <a type="button" class="btn btn-secondary" href="home" role="button"> Batalkan </a>
-              </div>
-    </div>
+<!-- form peminjaman Input Tanggal Peminjaman-->
+<form action="{{url('/pinjam/'.$buku->id)}}" method="POST">
+  @csrf
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+          <label for="inputTanggalAwal" class="form-label" >Masukkan tanggal Peminjaman</label>
+          <input type="date" name="tanggal_peminjaman" value="ok" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp">
 
-    <!--Footer -->
-<footer>
-  <div class="text-center">
-    <div class="container p-2"></div>
-    <div class="text-center p-1">
-      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
-    <div class="text-center p-1">
-      Contact Us On : xxxxxxxx </div>
+          <label for="inputTanggalAkhir" class="form-label" >Masukkan tanggal Pengembalian</label>
+          <input type="date" name="tanggal_pengembalian" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
+
+          <button class="btn btn-primary" type="submit">Ajukan</button>
+      </div>
   </div>
-  </footer>
-  
-  </body>
-  
-  </html>
+
+</form>
+  {{-- <center>
+      <div class="row">
+          <div class="col-6">
+              <div class="mb-4">
+
+                  <!-- <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div> -->
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="mb-4">
+
+                  <!-- <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div> -->
+              </div>
+          </div>
+      </div>
+      <center>
+      <h3 class="title"> Ajukan Peminjaman ?  </h3>
+      {{-- <div class="button-pengajuan">
+                  <a type="submit" class="btn btn-primary"> Ajukan </a>
+                  <a type="button" class="btn btn-secondary" href="home" role="button"> Batalkan </a>
+      </div> --}}
+      {{-- </div> --}}
+
+
+<!--Footer -->
+<footer>
+<div class="text-center">
+<div class="container p-2"></div>
+<div class="text-center p-1">
+© 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+<div class="text-center p-1">
+Contact Us On : xxxxxxxx </div>
+</div>
+</footer>
+
+</body>
+
+</html>
