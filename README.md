@@ -21,6 +21,10 @@ Fungsi ini adalah fungsi yang digunakan oleh semua user, dimana user dapat melih
 7.	Fungsi Logout
 Logout merupakan fungsi utama untuk user keluar dari sistem.
 
+
+Berdasarkan permasalahan yang disebutkan pada paragraf sebelumnya kami akan mengusulkan untuk membangun sistem informasi. D
+engan pembangunan sistem informasi ini, diharapkan mampu untuk membantu mengurangi waktu proses pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk di SMA Swasta HKBP 2 Tarutung. Selain itu, sistem informasi ini diharapkan dapat membuat pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk menjadi efisien dan efektif karena petugas dan pengunjung tidak perlu melakukan aktivitas tersebut secara manual.
+
 ## Architectural Design
 
 ## Database Design
