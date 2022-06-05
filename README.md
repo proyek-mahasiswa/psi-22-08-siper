@@ -3,6 +3,8 @@ Please read [RULES.md](RULES.md).
 
 ## General Discription
 Perpustakaan merupakan salah satu fasilitas lembaga pendidikan yang berperan dalam menunjang pembelajaran para peserta didik. Perpustakaan memiliki peran dalam proses belajar mengajar karena perpustakaan merupakan gudang ilmu yang menyediakan berbagai sumber informasi yang membantu untuk menambah pengetahuan bagi para pengunjung perpustakaan. Pada umumnya bagian yang ada dalam perpustakaan adalah petugas perpustakaan, anggota perpustakaan seperti siswa, guru maupun pegawai di sekolah tersebut.
+
+Pada perpustakaan SMA Swasta HKBP 2 Tarutung, pencarian dan pendataan buku yang mencakup pendataan buku baru, buku yang rusak dan buku yang hilang, peminjaman dan pengembalian buku serta pencarian buku masih dilakukan secara manual. Hal tersebut tentunya dianggap kurang efisien dan efektif dalam melakukan pencarian, peminjaman dan juga pengembalian buku ke perpustakaan sekolah. Oleh karena itu, dibutuhkan sistem yang dapat menangani masalah yang terjadi pada perpustakaan SMA Swasta HKBP 2 Tarutung.
 ## Features
 1.	Fungsi Pendaftaran
 Pengguna yang ingin melakukan peminjaman buku harus mendaftarkan diri terlebih dahulu, pendaftaran anggota akan dilakukan oleh yang bersangkutan.
