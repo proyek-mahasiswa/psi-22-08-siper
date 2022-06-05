@@ -5,6 +5,10 @@ Please read [RULES.md](RULES.md).
 Perpustakaan merupakan salah satu fasilitas lembaga pendidikan yang berperan dalam menunjang pembelajaran para peserta didik. Perpustakaan memiliki peran dalam proses belajar mengajar karena perpustakaan merupakan gudang ilmu yang menyediakan berbagai sumber informasi yang membantu untuk menambah pengetahuan bagi para pengunjung perpustakaan. Pada umumnya bagian yang ada dalam perpustakaan adalah petugas perpustakaan, anggota perpustakaan seperti siswa, guru maupun pegawai di sekolah tersebut.
 
 Pada perpustakaan SMA Swasta HKBP 2 Tarutung, pencarian dan pendataan buku yang mencakup pendataan buku baru, buku yang rusak dan buku yang hilang, peminjaman dan pengembalian buku serta pencarian buku masih dilakukan secara manual. Hal tersebut tentunya dianggap kurang efisien dan efektif dalam melakukan pencarian, peminjaman dan juga pengembalian buku ke perpustakaan sekolah. Oleh karena itu, dibutuhkan sistem yang dapat menangani masalah yang terjadi pada perpustakaan SMA Swasta HKBP 2 Tarutung.
+Berdasarkan permasalahan yang disebutkan pada paragraf sebelumnya kami akan mengusulkan untuk membangun sistem informasi. D
+engan pembangunan sistem informasi ini, diharapkan mampu untuk membantu mengurangi waktu proses pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk di SMA Swasta HKBP 2 Tarutung. Selain itu, sistem informasi ini diharapkan dapat membuat pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk menjadi efisien dan efektif karena petugas dan pengunjung tidak perlu melakukan aktivitas tersebut secara manual.
+
+
 ## Features
 1.	Fungsi Pendaftaran
 Pengguna yang ingin melakukan peminjaman buku harus mendaftarkan diri terlebih dahulu, pendaftaran anggota akan dilakukan oleh yang bersangkutan.
@@ -22,8 +26,7 @@ Fungsi ini adalah fungsi yang digunakan oleh semua user, dimana user dapat melih
 Logout merupakan fungsi utama untuk user keluar dari sistem.
 
 
-Berdasarkan permasalahan yang disebutkan pada paragraf sebelumnya kami akan mengusulkan untuk membangun sistem informasi. D
-engan pembangunan sistem informasi ini, diharapkan mampu untuk membantu mengurangi waktu proses pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk di SMA Swasta HKBP 2 Tarutung. Selain itu, sistem informasi ini diharapkan dapat membuat pencarian buku, pengembalian dan peminjaman buku, pendataan buku yang masuk menjadi efisien dan efektif karena petugas dan pengunjung tidak perlu melakukan aktivitas tersebut secara manual.
+
 
 ## Architectural Design
 
