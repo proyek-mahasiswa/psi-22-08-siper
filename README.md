@@ -4,7 +4,12 @@ Please read [RULES.md](RULES.md).
 ## General Discription
 
 ## Features
-
+1.	Fungsi Pendaftaran
+Pengguna yang ingin melakukan peminjaman buku harus mendaftarkan diri terlebih dahulu, pendaftaran anggota akan dilakukan oleh yang bersangkutan.
+2.	Fungsi Login
+Pengguna yang membutuhkan login ialah petugas perpustakaan, siswa/i maupun civitas SMA HKBP 2 Tarutung. Login dilakukan agar pengguna bisa mengakses website perpustakaan.
+3.	Fungsi Pendataan Buku
+Pendataan buku dilakukan oleh petugas perpustakaan terhadap buku yang masuk ke perpustakaan
 ## Architectural Design
 
 ## Database Design
