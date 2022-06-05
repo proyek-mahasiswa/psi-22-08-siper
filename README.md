@@ -10,6 +10,15 @@ Pengguna yang ingin melakukan peminjaman buku harus mendaftarkan diri terlebih d
 Pengguna yang membutuhkan login ialah petugas perpustakaan, siswa/i maupun civitas SMA HKBP 2 Tarutung. Login dilakukan agar pengguna bisa mengakses website perpustakaan.
 3.	Fungsi Pendataan Buku
 Pendataan buku dilakukan oleh petugas perpustakaan terhadap buku yang masuk ke perpustakaan
+4.	Fungsi peminjaman buku
+Peminjaman buku digunakan untuk mengelola data peminjaman buku yang dimulai dari pencarian buku oleh user, lalu melakukan peminjaman buku melalui petugas.
+5.	Fungsi Pengembalian buku
+Pengembalian buku dilakukan oleh user yang sudah meminjam buku , pengembalian dilakukan melalui konfirmasi petugas
+6.	Fungsi pencarian buku
+Fungsi ini adalah fungsi yang digunakan oleh semua user, dimana user dapat melihat buku apa saja yang tersedia dan yang tidak tersedia pada perpustakaan untuk dapat dilakukan peminjaman atau sekedar ingin mengetahui buku apa saja yang ada.
+7.	Fungsi Logout
+Logout merupakan fungsi utama untuk user keluar dari sistem.
+
 ## Architectural Design
 
 ## Database Design
