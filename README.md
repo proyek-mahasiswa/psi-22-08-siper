@@ -25,9 +25,6 @@ Fungsi ini adalah fungsi yang digunakan oleh semua user, dimana user dapat melih
 7.	Fungsi Logout
 Logout merupakan fungsi utama untuk user keluar dari sistem.
 
-
-
-
 ## Architectural Design
 
 ## Database Design
@@ -35,6 +32,11 @@ Logout merupakan fungsi utama untuk user keluar dari sistem.
 ## Installation Guide
 
 ### Minimum Hardware Requirements
+Kebutuhan antarmuka perangkat keras sistem ini yaitu sebagai berikut :
+1. Keyboard digunakan untuk memasukkan data ke dalam sistem.
+2. Mouse digunakan untuk memasukkan data ke dalam sistem.
+3. Monitor digunakan untuk melihat tampilan dari Sistem Informasi.
+4. Smartphone digunakan untuk memasukkan data ke dalam sistem dan melihat tampilan dari sistem. 
 
 ### Minimum Software Requirements
 
