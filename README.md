@@ -30,6 +30,16 @@ Logout merupakan fungsi utama untuk user keluar dari sistem.
 ## Database Design
 
 ## Installation Guide
+- Terlebih dahulu melakukan clone ulang dari github
+- Menyiapkan lokasi untuk folder proyek
+- Menyiapkan nama database pada aplikasi yang digunakan 
+- Membuat file .env untuk menghubungkan ke database
+- Masuk ke terminal folder kemudian melakukan generate key untuk sistem
+- Melakukan migrating untuk memasukkan tabel database ke aplikasi database yang mana pada proyek ini
+- Karena akun admin telah kami create pada database seeder, maka akan melakukan run di terminal dengan php artisan db:seed --class=UserSeeder
+- Kemudian dapat kita lihat bahwa akun dari seeder telah terbentuk yaitu untuk akun Admin.
+- Kemudian masuk ke server dengan php -S localhost:8000 -t public dan akan dilanjutkan ke browser
+- Maka akan ditampilkan halaman awal dari SIPER
 
 ### Minimum Hardware Requirements
 Kebutuhan antarmuka perangkat keras sistem ini yaitu sebagai berikut :
