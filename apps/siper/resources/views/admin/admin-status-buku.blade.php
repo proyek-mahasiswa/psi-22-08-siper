@@ -59,7 +59,7 @@
                 </ul>
     </div>
     <h1 class="text-center mb-4 ">Data Status Buku</h1>
-<div class="container">
+    <div class="container">
     <div class="row">
         
     <table class="table table-striped table-hover" >
@@ -68,22 +68,25 @@
       <th scope="col">Lainnya</th>
       <th scope="col"></th>
       <th scope="col">Buku</th>
-      <th scope="col">Keterangan</th>
+      
     </tr>
   </thead>
   <tbody>
+    @foreach ($buku as $row) 
     <tr>
       <th scope="row"><input type="submit" class="btn btn-success" value="Details" href="#" data-target="#detail" data-toggle="modal"></input></th>
       <td></td>
-      <td>Judul Buku</td>
+      <td>{{$row->judul}}</td>
       <td></td>
     </tr>
+    
   </tbody>
   
-</table>
-
+@endforeach
 <!--Details -->
 
+
+@foreach ($buku as $row)
 <div class="modal fade" id="detail" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -96,40 +99,39 @@
                 
                 <div class="modal-body">
                     <form>
+                        
                         @csrf
             
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Judul Buku</label>
-                                <p>-</p>
-                             
-                            </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Judul Buku</label>
+                                <p>{{$row->judul}}</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama Pengarang</label>
+                                <p>{{$row->pengarang}}</p>
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nama Penerbit</label>
+                                <p>{{$row->penerbit}}</p>   
+                        </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Pengarang</label>
-                                <p>-</p>
-                             
-                            </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Tahun Terbit</label>
+                                <p>{{$row->tahunterbit}}</p>  
+                        </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Penerbit</label>
-                                <p>-</p>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Tahun terbit</label>
-                                <p>-</p>
-                            </div>
-
-                            </form>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Rak Buku</label>
+                                <p>{{$row->rak}}</p>
+                        </div>
+                </form>
+             
+            @endforeach 
+        </table>
+    </body>
+</html>
 
 
 
@@ -202,17 +204,16 @@
     </table> -->
 <!--Footer -->
 
-
 </body>
 <footer>
-  <div class="text-center">
+    <div class="text-center">
     <div class="container p-2"></div>
     <div class="text-center p-1">
-      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
+    © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
     <div class="text-center p-1">
-      Contact Us On : xxxxxxxx </div>
-  </div>
-  </footer>
+    Contact Us On : xxxxxxxx </div>
+    </div>
+    </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

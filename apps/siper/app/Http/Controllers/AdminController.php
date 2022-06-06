@@ -31,9 +31,10 @@ class AdminController extends Controller
     }
 
 
-
     public function indexBook(){
-        return view('admin.admin-status-buku');
+        $buku = DB::table('buku')->get();
+        return view('admin.admin-status-buku',['buku' => $buku]);
+    
     }
 
     public function indexPetugas(){
