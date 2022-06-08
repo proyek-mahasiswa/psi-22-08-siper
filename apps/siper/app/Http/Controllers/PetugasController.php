@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\Peminjaman;
 use App\Models\Petugas;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class PetugasController extends Controller
 {
@@ -43,19 +45,23 @@ class PetugasController extends Controller
     }
 
     public function vPeminjaman(){
-        return view('petugas.peminjaman');
+        $datas = Peminjaman::where('status','diproses')->get();
+        return view('petugas.peminjaman', compact('datas'));
     }
 
     public function vPengembalian(){
-        return view('petugas.pengembalian');
+        $datas = Peminjaman::where('status','request pengembalian')->get();
+        return view('petugas.pengembalian',compact('datas'));
     }
 
     public function vPerpanjangan(){
-        return view('petugas.perpanjangan');
+        $datas = Peminjaman::where('status','request perpanjangan')->get();
+        return view('petugas.perpanjangan', compact('datas'));
     }
 
     public function vDatabuku(){
-        return view('petugas.databuku');
+        $datas = Peminjaman::where('status','!=','diproses')->get();
+        return view('petugas.databuku',compact('datas'));
     }
 
     public function vDaftarbuku(){
@@ -67,6 +73,43 @@ class PetugasController extends Controller
     
     public function profilePetugas(){
         return view('petugas.profile-petugas');
+    }
+
+
+    public function terimaPerpanjang(Peminjaman $peminjaman){
+        $peminjaman->status = 'sudah diperpanjang';
+        $peminjaman->updated_at = now();
+        $peminjaman->update();
+        return redirect()->back()->with('confirm', 'Berhasil Menerima Perpanjangan');
+    }
+   
+    public function tolakPerpanjang(Peminjaman $peminjaman){
+        $peminjaman->status = 'perpanjangan ditolak';
+        $peminjaman->updated_at = now();
+        $peminjaman->update();
+        return redirect()->back()->with('confirm', 'Berhasil Menolak Perpanjangan');
+    }
+
+
+    public function rusak(Peminjaman $peminjaman){
+        $peminjaman->status = 'dikembalikan rusak';
+        $peminjaman->updated_at = now();
+        $peminjaman->update();
+        return redirect()->back()->with('confirm', 'Berhasil Mengupdate');
+    }
+
+    public function hilang(Peminjaman $peminjaman){
+        $peminjaman->status = 'hilang';
+        $peminjaman->updated_at = now();
+        $peminjaman->update();
+        return redirect()->back()->with('confirm', 'Berhasil Mengupdate');
+    }
+    
+    public function dikembalikan(Peminjaman $peminjaman){
+        $peminjaman->status = 'dikembalikan';
+        $peminjaman->updated_at = now();
+        $peminjaman->update();
+        return redirect()->back()->with('confirm', 'Berhasil Mengupdate');
     }
 
 
@@ -110,10 +153,8 @@ class PetugasController extends Controller
 
     }
 
-    public function hapusbuku(){
-        $buku = Buku::find($id);
-        $buku -> delete();
-
+    public function hapusbuku(Buku $buku){
+        $buku->delete();
         return redirect()->back();
     }
 
@@ -131,7 +172,19 @@ class PetugasController extends Controller
 
 
 
-
+    public function terima(Peminjaman $buku){
+        $buku->status = 'diterima';
+        $buku->updated_at = now();
+        $buku->update();
+        return redirect()->back()->with('confirm', 'Berhasil Menerima');
+    }
+    
+    public function tolak(Peminjaman $buku){
+        $buku->status = 'ditolak';
+        $buku->updated_at = now();
+        $buku->update();
+        return redirect()->back()->with('reject', 'Berhasil Menolak');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -161,9 +214,28 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editprofile(User $user, Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users,username,'.$user->id,
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'no_telepon' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return redirect()->back()->with('error', $validator->errors()->first());   
+        }
+
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_telepon = $request->no_telepon;
+        if($request->password){
+            $user->password = Hash::make($request->password);
+        }
+        $user->update();
+        return redirect()->route('profilePetugas')->with('success', 'Success');   ;
     }
 
     /**
@@ -184,8 +256,9 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $petugas)
     {
-        //
+        $petugas->delete();
+        return redirect()->route('admin-dashboard-petugas');
     }
 }
