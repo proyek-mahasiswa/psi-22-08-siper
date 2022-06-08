@@ -9,7 +9,7 @@
     
     <title>Riwayat Peminjaman</title>
   </head>
-  <body>
+  <body >
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-blue fixed-top">
@@ -48,52 +48,58 @@
 <hr class="lines">
 <br>
 
-<!-- Daftar Riwayat Buku-->
-
-<div class="cards">
-    <div class="card-header">
-      1
-    </div>
-    <center>
-    <img src="/images/book1.jpeg" class="img" alt="gambarbuku">
-    </center>
-    <div class="card-body">
-      <div class="content">
-      <h5 class="card-title">The Midnight Library</h5>
-      <h7 class="card-title">29 April 2022 - 14 Mei 2022 </h7>
-      <br>  <br>
-      <a href="perpanjang-waktu" class="btn btn-primary">Perpanjang Waktu</a>
-    </div>
-  </div>
-</div>
-<br>
-<div class="cards">
-  <div class="card-header">
-    2
-  </div>
-  <center>
-  <img src="/images/book1.jpeg" class="img" alt="gambarbuku">
-  </center>
-  <div class="card-body">
-    <div class="content">
-    <h5 class="card-title">The Power Of Habit</h5>
-    <h7 class="card-title">29 April 2022 - 14 Mei 2022 </h7>
-    <br>  <br>
-    <a href="loaningpage_pengunjung.html" class="btn btn-primary">Sudah Dikembalikan</a>
-  </div>
-</div>
+<div class="container mb-5 pb-5">
+  @foreach($datas as $i => $data)
+      <!-- Daftar Riwayat Buku-->
+      <div class="cards">
+        <div class="">
+          {{$i+1}}
+        </div>
+        <center>
+        <img src="/img/book.png" class="img" alt="gambarbuku">
+        </center>
+        <div class="card-body">
+          <div class="content">
+            <h5 class="card-title">{{$data->buku->judul}}</h5>
+            <h6 class="card-title">{{$data->tanggal_pinjam}} - {{$data->tanggal_kembali}} </h6>
+            <h5 class="card-title">{{$data->status}}</h5>
+            @if($data->status == 'diterima')
+            <form action="{{route('kembalikan', $data->id)}}" method="post">
+              <a href="{{route('perpanjang-waktu', $data->id)}}" class="btn btn-primary">Perpanjang Waktu</a>
+                  @csrf
+                  @method('patch')
+                  <button type="submit" class="btn btn-info">Kembalikan</button>
+                </form>
+            @elseif($data->status == 'diterima' || $data->status == 'sudah diperpanjang' || $data->status == 'perpanjangan ditolak')
+              <form action="{{route('kembalikan', $data->id)}}" method="post">
+                  @csrf
+                  @method('patch')
+                  <button type="submit" class="btn btn-info">Kembalikan</button>
+              </form>
+            @endif
+          </div>
+        </div>
+      </div>
+  @endforeach
 </div>
 
 <!--Footer -->
-<footer>
-  <div class="text-center">
-    <div class="container p-2"></div>
-    <div class="text-center p-1">
-      © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung </div>
-    <div class="text-center p-1">
-      Contact Us On : xxxxxxxx </div>
+  <div id="footer mt-5 pt-5">
+    <div class="navbar navbar-inner navbar-fixed-bottom">
+      {{-- <p class="muted credit"><center>ver 1.0.1</center></p> --}}
+      <footer >
+          <div class="text-center">
+            <div class="container p-2"></div>
+            <div class="text-center p-1">
+              © 2022 Copyright: SIPER SMA Swasta HKBP 2 Tarutung 
+            </div>
+            <div class="text-center p-1">
+              Contact Us On : xxxxxxxx 
+            </div>
+          </div>
+        </footer>
+    </div>
   </div>
-  </footer>
 
   </body>
 
