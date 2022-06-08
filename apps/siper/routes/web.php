@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -75,7 +74,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['middleware' => ['auth', 'CheckLevel:admin']], function () {
+Route::group(['middleware'=>['auth','CheckLevel:admin']], function(){
     Route::get('/admin-dashboard-pengunjung', [App\Http\Controllers\AdminController::class, 'index'])->name('admin-dashboard-pengunjung');
     Route::get('/admin-status-buku', [App\Http\Controllers\AdminController::class, 'indexBook'])->name('admin-status-buku');
     Route::get('/admin-dashboard-petugas', [App\Http\Controllers\AdminController::class, 'indexPetugas'])->name('admin-dashboard-petugas');
@@ -85,45 +84,65 @@ Route::group(['middleware' => ['auth', 'CheckLevel:admin']], function () {
     Route::get('/tambahpetugas', [App\Http\Controllers\AdminController::class, 'tambahpetugas'])->name('tambahpetugas');
     Route::post('/insertpetugas', [App\Http\Controllers\AdminController::class, 'insertpetugas'])->name('insertpetugas');
     Route::post('/editpetugas', [App\Http\Controllers\AdminController::class, 'editpetugas'])->name('editpetugas');
+    Route::post('/editprofileadmin/{user}', [App\Http\Controllers\AdminController::class, 'editprofile'])->name('editprofileadmin');
+    Route::delete('/deletepetugas/{petugas}', [App\Http\Controllers\PetugasController::class, 'destroy'])->name('deletepetugas');
+    Route::delete('/deletepengunjung/{pengunjung}', [App\Http\Controllers\PengunjungController::class, 'destroy'])->name('deletepengunjung');
 });
 
-Route::group(['middleware' => ['auth', 'CheckLevel:petugas']], function () {
-    Route::get('/viewPengunjung', [App\Http\Controllers\PetugasController::class, 'index'])->name('viewPengunjung');
+Route::group(['middleware'=>['auth','CheckLevel:petugas']], function(){
+    Route::get('/viewPengunjung', [App\Http\Controllers\PetugasController::class, 'index' ])->name('viewPengunjung');
 
-    Route::get('/vPengunjung', [App\Http\Controllers\PetugasController::class, 'vPengunjung'])->name('v_pengunjung');
+    Route::get('/vPengunjung', [App\Http\Controllers\PetugasController::class, 'vPengunjung' ])->name('v_pengunjung');
 
-    Route::get('/vPeminjaman', [App\Http\Controllers\PetugasController::class, 'vPeminjaman'])->name('v_peminjaman');
+    Route::get('/vPeminjaman', [App\Http\Controllers\PetugasController::class, 'vPeminjaman' ])->name('v_peminjaman');
 
-    Route::get('/vPengembalian', [App\Http\Controllers\PetugasController::class, 'vPengembalian'])->name('v_pengembalian');
+    Route::get('/vPengembalian', [App\Http\Controllers\PetugasController::class, 'vPengembalian' ])->name('v_pengembalian');
 
-    Route::get('/vPerpanjangan', [App\Http\Controllers\PetugasController::class, 'vPerpanjangan'])->name('v_perpanjangan');
+    Route::get('/vPerpanjangan', [App\Http\Controllers\PetugasController::class, 'vPerpanjangan' ])->name('v_perpanjangan');
 
-    Route::get('/vDatabuku', [App\Http\Controllers\PetugasController::class, 'vDatabuku'])->name('v_databuku');
+    Route::get('/vDatabuku', [App\Http\Controllers\PetugasController::class, 'vDatabuku' ])->name('v_databuku');
 
-    Route::get('/vDaftarbuku', [App\Http\Controllers\PetugasController::class, 'vDaftarbuku'])->name('v_daftarbuku');
+    Route::get('/vDaftarbuku', [App\Http\Controllers\PetugasController::class, 'vDaftarbuku' ])->name('v_daftarbuku');
 
-    Route::get('/profilePetugas', [App\Http\Controllers\PetugasController::class, 'profilePetugas'])->name('profilePetugas');
+    Route::get('/profilePetugas', [App\Http\Controllers\PetugasController::class, 'profilePetugas' ])->name('profilePetugas');
 
     Route::post('/insertbuku', [App\Http\Controllers\PetugasController::class, 'insertbuku'])->name('insertbuku');
 
     Route::post('/editbuku', [App\Http\Controllers\PetugasController::class, 'editbuku'])->name('editbuku');
 
-    Route::post('/hapusbuku', [App\Http\Controllers\PetugasController::class, 'hapusbuku'])->name('hapusbuku');
+    Route::patch('/tolak-peminjaman/{buku}',[PetugasController::class, 'tolak'])->name('peminjaman.tolak');
+    Route::patch('/terima-peminjaman/{buku}',[PetugasController::class, 'terima'])->name('peminjaman.terima');
+
+    Route::delete('/hapusbuku/{buku}', [App\Http\Controllers\PetugasController::class, 'hapusbuku'])->name('hapusbuku');
 
     Route::get('/searchbuku', [App\Http\Controllers\PetugasController::class, 'searchbuku'])->name('searchbuku');
-
+    
     Route::get('/searchpengunjung', [App\Http\Controllers\PetugasController::class, 'searchpengunjung'])->name('searchpengunjung');
+    
+    Route::post('/editprofilepetugas/{user}', [App\Http\Controllers\PetugasController::class, 'editprofile'])->name('editprofilepetugas');
+    
+    Route::patch('/terima-perpanjangan/{peminjaman}', [App\Http\Controllers\PetugasController::class, 'terimaPerpanjang'])->name('perpanjangan.terima');
+    
+    Route::patch('/tolak-perpanjangan/{peminjaman}', [App\Http\Controllers\PetugasController::class, 'tolakPerpanjang'])->name('perpanjangan.tolak');
+    
+    Route::get('/rusak/{peminjaman}', [App\Http\Controllers\PetugasController::class, 'rusak'])->name('rusak');
+    
+    Route::get('/hilang/{peminjaman}', [App\Http\Controllers\PetugasController::class, 'hilang'])->name('hilang');
+    
+    Route::get('/dikembalikan/{peminjaman}', [App\Http\Controllers\PetugasController::class, 'dikembalikan'])->name('dikembalikan');
 });
 
-Route::group(['middleware' => ['auth', 'CheckLevel:pengunjung']], function () {
+Route::group(['middleware'=>['auth','CheckLevel:pengunjung']], function(){
 
-    Route::get('/pinjam/{idBuku}', [App\Http\Controllers\PengunjungController::class, 'index'])->name('pinjam');
-    Route::post('/pinjam/{idBuku}', [App\Http\Controllers\PeminjamanController::class, 'store']);
+    Route::get('/pinjam/{idBuku}', [App\Http\Controllers\PengunjungController::class, 'index' ])->name('pinjam');
+    Route::post('/pinjam/{idBuku}', [App\Http\Controllers\PeminjamanController::class, 'store' ]);
+    Route::get('/search', [App\Http\Controllers\PengunjungController::class, 'search' ])->name('search');
+    Route::get('/profile-pengunjung', [App\Http\Controllers\PengunjungController::class, 'profilePengunjung' ])->name('profile-pengunjung');
+    Route::get('/loanhistory-pengunjung', [App\Http\Controllers\PengunjungController::class, 'loanHistory' ])->name('loanhistory-pengunjung');
+    Route::get('/perpanjang-waktu/{peminjaman}', [App\Http\Controllers\PengunjungController::class, 'perpanjangwaktu' ])->name('perpanjang-waktu');
+    Route::patch('/perpanjang/{peminjaman}', [App\Http\Controllers\PengunjungController::class, 'perpanjang' ])->name('perpanjang');
+    Route::patch('/kembalikan/{peminjaman}', [App\Http\Controllers\PengunjungController::class, 'kembalikan' ])->name('kembalikan');
 
-    Route::get('/search', [App\Http\Controllers\PengunjungController::class, 'search'])->name('search');
-    Route::get('/profile-pengunjung', [App\Http\Controllers\PengunjungController::class, 'profilePengunjung'])->name('profile-pengunjung');
-    Route::get('/loanhistory-pengunjung', [App\Http\Controllers\PengunjungController::class, 'loanHistory'])->name('loanhistory-pengunjung');
-    Route::get('/perpanjang-waktu', [App\Http\Controllers\PengunjungController::class, 'perpanjangwaktu'])->name('perpanjang-waktu');
+    Route::post('/editprofile/{user}', [App\Http\Controllers\PengunjungController::class, 'editprofile'])->name('editprofile');
 
-    Route::post('/editprofile', [App\Http\Controllers\PetugasController::class, 'editprofile'])->name('editprofile');
 });
