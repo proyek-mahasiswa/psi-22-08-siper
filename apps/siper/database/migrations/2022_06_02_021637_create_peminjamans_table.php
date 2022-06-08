@@ -22,8 +22,8 @@ class CreatePeminjamansTable extends Migration
             $table->string('status');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('buku_id')->references('id')->on('buku');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('buku_id')->references('id')->on('buku')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
