@@ -81,7 +81,7 @@
       <td></td>
       <td>
       <input type="submit" class="btn btn-warning" value="Edit" href="" data-target="#edit-petugas{{$row->id}}" data-toggle="modal"></input>
-                    <input type="submit" class="btn btn-danger" value="Hapus" href="/editpetugas" data-target="#hapuspetugas" data-toggle="modal"></input> 
+                    <input type="submit" class="btn btn-danger" value="Hapus" href="" data-target="#hapuspetugas{{$row->id}}" data-toggle="modal"></input> 
       </td>
     </tr>
     @endforeach
@@ -204,9 +204,9 @@
     </div>
 
     
-  
-    <!--Hapus Petugas-->
-                        <div class="modal fade" id="hapuspetugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    @foreach($petugas as $row)
+                        <!--Hapus Petugas-->
+                        <div class="modal fade" id="hapuspetugas{{$row->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -218,12 +218,16 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                    <form action="{{route('deletepetugas',$row->id)}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
                                 </div>
                                 </div>
                             </div>
-                            </div>
-    
+                        </div>
+                    @endforeach
 
 <!--Footer -->
 <footer>
