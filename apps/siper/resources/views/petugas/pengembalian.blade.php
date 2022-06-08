@@ -122,26 +122,43 @@
 
     </div>
     <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Nama</h3>
-    <h6 class="card-text">Username</h6>
-    
-  
+      @if (\Session::has('confirm'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('confirm') !!}</li>
+            </ul>
+        </div>
+      @elseif (\Session::has('reject'))
+        <div class="alert alert-primary">
+          <ul>
+              <li>{!! \Session::get('reject') !!}</li>
+          </ul>
+        </div>
+      @endif
+      @foreach($datas as $i => $data)
+    <div class="card mx-2 px-1 py-5 mt-4" style="width: 18rem; float: left;">
+      <img src="img/book.png" class="card-img-top" style="max-width: 100px; max-height:100px;">
+      <div class="card-body">
+        <h4 class="card-title">Judul buku : {{$data->buku->judul}}</h4>
+        <h6 class="card-title">Peminjam : {{$data->user->name}}</h6>
+        <h6 class="card-text">{{$data->tanggal_pinjam}} - {{$data->tanggal_kembali}}</h6>
+      </div>
+      <button onclick="location.href='{{route('rusak', $data->id)}}'" class="btn mx-5 mt-2 btn-danger">Rusak</button>
+      <button onclick="location.href='{{route('hilang', $data->id)}}'" class="btn mx-5 mt-2 btn-warning">Hilang</button>
+      <button onclick="location.href='{{route('dikembalikan', $data->id)}}'" class="btn mx-5 mt-2 btn-primary">Dikembalikan</button>
+      {{-- <form action="{{route('perpanjangan.tolak', $data->id)}}" method="POST">
+        @csrf
+        @method('patch')
+        <button type="submit" class="btn btn-danger mx-5 mt-2">Tolak Perpanjangan</button>
+      </form>
+      <form action="{{route('perpanjangan.terima', $data->id)}}" method="POST">
+        @csrf
+        @method('patch')
+        <button type="submit"class="btn btn-primary mx-5 mt-2">Terima Perpanjangan</button>
+      </form> --}}
     </div>
-   
-
-  </div>
-  <input href="#" class="btn btn-primary" style="margin-left:280px; margin-top:-175px; width:15%" value="Dikembalikan"></input> //button ini kalau di klik menghapus riwayat peminjaman
+  @endforeach
   </td>
-
-
-
-
-
-
-
 
 <!-- 
   <table border="0px" align="center">
