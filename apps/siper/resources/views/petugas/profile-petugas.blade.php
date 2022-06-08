@@ -53,6 +53,19 @@
   
   <body>
       <div class="wrap">
+        @if (\Session::has('error'))
+          <div class="alert alert-error">
+              <ul>
+                  <i class="text-danger">{!! \Session::get('error') !!}</i>
+              </ul>
+          </div>
+        @elseif(\Session::has('success'))
+          <div class="alert alert-success">
+            <ul>
+                <i class="text-success">{!! \Session::get('success') !!}</i>
+            </ul>
+          </div>
+        @endif
            <table>
               <tr>
                   <td rowspan="8" width="100px"> <img src="https://images.assetsdelivery.com/compings_v2/thesomeday123/thesomeday1231712/thesomeday123171200008.jpg" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
@@ -82,11 +95,61 @@
   <br> <br>
   <center>
   <div class="button-update-profile-pengunjung">
-              <a type="submit" class="btn btn-primary" href="editprofile_pengunjung.html" role="button"> Update </a>
+              <a type="submit" class="btn btn-primary" href="" role="button" data-target=#editprofil data-toggle="modal"> Update </a>
               <a type="button" class="btn btn-secondary" href="home" role="button"> Back </a>
                 </div>
-      </div>
+              </center>
+      <div class="modal fade" id="editprofil" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">Update</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+           
+              <div class="modal-body">
+                  <form action=" {{ route('editprofilepetugas', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+                      @csrf
+                      <div class="mb-4">
+                              <label for="username" class="form-label">Username</label>
+                              <input type="text" class="form-control"  value="{{Auth::user()->username}}" name="username" id="exampleInputName1" aria-describedby="emailHelp">
+                          </div>
+                          <div class="mb-4">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" value="{{Auth::user()->name}}"  name="name" id="exampleInputName1" aria-describedby="emailHelp">
+                           
+                          </div>
 
+
+                          <div class="mb-4">
+                              <label for="exampleInputEmail1" class="form-label">Email </label>
+                              <input type="text" class="form-control" value="{{Auth::user()->email}}" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                           
+                          </div>
+
+                          <div class="mb-4">
+                              <label for="exampleInputEmail1" class="form-label">No Telepon</label>
+                              <input type="number" class="form-control" value="{{Auth::user()->no_telepon}}" name="no_telepon" id="exampleInputNotelp" aria-describedby="emailHelp">
+                           
+                          </div>
+
+                          <div class="mb-4">
+                              <label for="exampleInputPassword1" class="form-label">Password</label>
+                              <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                          </div>
+
+                       
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          
+
+                  </form>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
       <footer>
   <div class="text-center">
     <div class="container p-2"></div>
@@ -98,5 +161,8 @@
   </footer>
     </body>
     <!--Footer -->
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     </html>
