@@ -92,25 +92,33 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Judul</th>
+      <th scope="col">No</th>
+      <th scope="col">Nama Peminjam</th>
+      <th scope="col">Judul Buku</th>
+      <th scope="col">Tanggal Pinjam</th>
+      <th scope="col">Tanggal Kembali</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
+    @if($datas->count() > 0)
+      @foreach ($datas as $i => $data)
+      <tr>
+        <th scope="row">{{$i+1}}</th>
+        <td>{{$data->user->name}}</td>
+        <td>{{$data->buku->judul}}</td>
+        <td>{{$data->tanggal_pinjam}}</td>
+        <td>{{$data->tanggal_kembali}}</td>
+        <td>{{$data->status}}</td>
+      </tr>
+      @endforeach
+    @else
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Biologi</td>
-      <td>Diterima</td>
+      <th colspan="6" class="text-center">
+        Data Kosong
+      </th>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>Ditolak</td>
-    </tr>
+    @endif
   </tbody>
 </table>
     
@@ -187,5 +195,3 @@
 
 
 </html>
-
-
