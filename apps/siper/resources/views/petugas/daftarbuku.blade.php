@@ -1,4 +1,4 @@
-    <!doctype html>
+<!doctype html>
     <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -78,14 +78,16 @@
     </a></span> <button>Tambahkan</button>
     </div> -->
 
-                        <div class="kembali">
-                        <a class="btn btn-secondary" href="/vPengunjung" role="button">Kembali</a>
-                        </div>
-<br>
-                        <div class="tambahb">
-                        <a class="btn btn-success" href="tambahBuku" role="button" data-target="#tambah-buku" data-toggle="modal">Tambah Buku +</a>
-                        </div>
-<br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="kembali px-3" style="float: left;">
+                <a class="btn btn-secondary" href="/vPengunjung" role="button">Kembali</a>
+            </div>
+            <div class="tambah">
+                <a class="btn btn-success" href="tambahBuku" role="button" data-target="#tambah-buku" data-toggle="modal">Tambah Buku +</a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -100,8 +102,8 @@
                 <h5 class="card-title">{{$row->judul}}</h5>
                 <p class="card-text"> Penerbit : {{$row->penerbit}}</p>
                 <p class="card-text"> Tahun Terbit : {{$row->tahunterbit}} </p>
-                <a href="petugas-edit" data-target="#editbuku" data-toggle="modal" class="btn btn-warning">Edit</a>
-                <a href="" data-target="#hapusbuku" data-toggle="modal" class="btn btn-danger">Hapus</a>
+                <a href="petugas-edit" data-target="#editbuku{{$row->id}}" data-toggle="modal" class="btn btn-warning">Edit</a>
+                <a href="" data-target="#hapusbuku{{$row->id}}" data-toggle="modal" class="btn btn-danger">Hapus</a>
           </div>
           </div>
         </div>
@@ -165,8 +167,9 @@
         </div>
     </div>
 
-     <!--Hapus Buku-->
-     <div class="modal fade" id="hapusbuku" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    @foreach ($buku as $row)
+                        <!--Hapus Buku-->
+                        <div class="modal fade" id="hapusbuku{{$row->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -178,16 +181,20 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                    <form action="{{route('hapusbuku',$row->id)}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
                                 </div>
                                 </div>
                             </div>
-                            </div>
-
+                        </div>
+                    @endforeach
 
  <!-- Modal Edit Buku -->
  @foreach ($buku as $row)
- <div class="modal fade" id="editbuku" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
+ <div class="modal fade" id="editbuku{{$row->id}}" tabdata-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -204,19 +211,19 @@
                         <input type="hidden" name="id" value="{{$row->id}}">
                         <div class="mb-5">
                                 <label for="judul" class="form-label">Judul</label>
-                                <input type="text" class="form-control"  value="{{$row->judul}} " name="judul" id="judul" aria-describedby="emailHelp">
+                                <input type="text" class="form-control"  value="{{$row->judul}}" name="judul" id="judul" aria-describedby="emailHelp">
                              
                             </div>
 
                             <div class="mb-5">
                                 <label for="pengarang" class="form-label">Pengarang</label>
-                                <input type="text" class="form-control"  value="{{$row->pengarang}} " name="pengarang" id="exampleInputUsername1" aria-describedby="emailHelp">
+                                <input type="text" class="form-control"  value="{{$row->pengarang}}" name="pengarang" id="exampleInputUsername1" aria-describedby="emailHelp">
                              
                             </div>
 
                             <div class="mb-5">
                                 <label for="penerbit" class="form-label">Penerbit</label>
-                                <input type="text" class="form-control"  value="{{$row->penerbit}} " name="penerbit" id="exampleInputUsername1" aria-describedby="emailHelp">
+                                <input type="text" class="form-control"  value="{{$row->penerbit}}" name="penerbit" id="exampleInputUsername1" aria-describedby="emailHelp">
                              
                             </div>
 
@@ -228,8 +235,7 @@
 
                             <div class="mb-5">
                                 <label for="rak" class="form-label">Rak</label>
-                                <input type="text" class="form-control"  value="{{$row->rak}} " name="rak" id="exampleInputUsername1" aria-describedby="emailHelp">
-                             
+                                <input type="text" class="form-control"  value="{{$row->rak}}" name="rak" id="exampleInputUsername1" aria-describedby="emailHelp">
                             </div>
                             
 
