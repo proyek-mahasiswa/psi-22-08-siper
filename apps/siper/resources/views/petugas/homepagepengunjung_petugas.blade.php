@@ -126,9 +126,7 @@
                 <div class="modal-body">
              
                     <form>
-                      
                         @csrf
-
                         <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                              <p>{{$row->username}}</p>

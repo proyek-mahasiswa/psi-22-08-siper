@@ -123,21 +123,39 @@
 
     </div>
     <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h6 class="card-title">Nama : </h6>
-    <h6 class="card-text">Judul : </h6>
-    <h6 class="card-text">Tanggal Peminjaman : </h6>
-    <h6 class="card-text">Tanggal Pengembalian : </h6>
-  
+      @if (\Session::has('confirm'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('confirm') !!}</li>
+            </ul>
+        </div>
+      @elseif (\Session::has('reject'))
+        <div class="alert alert-primary">
+          <ul>
+              <li>{!! \Session::get('reject') !!}</li>
+          </ul>
+        </div>
+      @endif
+      @foreach($datas as $i => $data)
+    <div class="card mx-2 px-1 py-5 mt-4" style="width: 18rem; float: left;">
+      <img src="img/book.png" class="card-img-top" alt="" style="max-width: 100px; max-height:100px;">
+      <div class="card-body">
+        <h4 class="card-title">Judul buku : {{$data->buku->judul}}</h4>
+        <h6 class="card-title">Peminjam : {{$data->user->name}}</h6>
+        <h6 class="card-text">{{$data->tanggal_pinjam}} - {{$data->tanggal_kembali}}</h6>
+      </div>
+      <form action="{{route('peminjaman.tolak', $data->id)}}" method="POST">
+        @csrf
+        @method('patch')
+        <button type="submit" class="btn btn-danger mx-5 mt-2">Ditolak</button>
+      </form>
+      <form action="{{route('peminjaman.terima', $data->id)}}" method="POST">
+        @csrf
+        @method('patch')
+        <button type="submit"class="btn btn-primary mx-5 mt-2">Diterima</button>
+      </form>
     </div>
-   
-
-  </div>
-  
-  <input href="#" class="btn btn-danger" style="margin-left:380px; margin-top:-95px; width:10%" value="Ditolak"></input>
-  <input href="#" class="btn btn-primary" style="margin-left:280px; margin-top:-130px; width:15%" value="Diterima"></input>
+  @endforeach
   </td>
 
 
