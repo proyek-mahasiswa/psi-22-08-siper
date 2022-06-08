@@ -48,51 +48,62 @@
         <div class="wrap">
              <table>
                 <tr>
-                    <td rowspan="8" width="100px"> <img src="/images/book1.jpeg" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
+                    <td rowspan="8" width="100px"> <img src="/img/book.png" width="200px" style="display: block;border-radius: 5%;border-color:white;margin-right:30px" border="2px" ></td>
                 </tr>
                 <tr>
                     <td><b>Nama Buku </b></td>
-                    <td>:</td> <td> The Midnight Library </td>
+                    <td>:</td> <td> {{$peminjaman->buku->judul}} </td>
                 </tr>
                 <tr>
-                    <td><b>Pengarang</b></td><td>:</td> <td>Matt Haig</td>
+                    <td><b>Pengarang</b></td><td>:</td> <td>{{$peminjaman->buku->pengarang}}</td>
                 </tr>
                 <tr>
                     <tr>
-                        <td><b> Penerbit </b></td><td>:</td> <td> Mizan</td>
+                        <td><b> Penerbit </b></td><td>:</td> <td> {{$peminjaman->buku->penerbit}}</td>
                     </tr>
                 <tr>
-                    <td><b>Tahun Terbit </b></td><td>:</td> <td>2015</td>
+                    <td><b>Tahun Terbit </b></td><td>:</td> <td>{{$peminjaman->buku->tahunterbit}}</td>
                 </tr>
             </table>
             </center>
     <br> <br>
     
     <!-- Input Tanggal Peminjaman-->
-    <center>
-    <div class="row">
-        <div class="col-6">
-            <div class="mb-4">
-                <label for="inputTanggalAwal" class="form-label">Tanggal Peminjaman Awal</label>
-                <input type="date" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp">
-                <div id="tanggalAwalHelp" class="form-text text-danger">pesan kesalahan</div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="mb-4">
-                <label for="inputTanggalAkhir" class="form-label">Tanggal Perpanjangan Waktu</label>
-                <input type="date" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
-                <div id="tanggalAkhirHelp" class="form-text text-danger">pesan kesalahan</div>
-            </div>
-        </div>
+    <form action="{{route('perpanjang', $peminjaman->id)}}" method="POST">
+      @csrf
+      @method('patch')
+      <center>
+      <div class="row">
+          <div class="col-6">
+              <div class="mb-4">
+                  <label for="inputTanggalAwal" class="form-label">Tanggal Peminjaman Awal</label>
+                  <input type="date" name="inputTanggalAwal" class="form-control" id="inputTanggalAwal" aria-describedby="tanggalAwalHelp" value="{{$peminjaman->tanggal_pinjam}}">
+                  @if (\Session::has('error_inputTanggalAwal'))
+                        <div id="tanggalAwalHelp" class="form-text text-danger"><i>{!! \Session::get('error_inputTanggalAwal') !!}</i></div>
+                  @endif
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="mb-4">
+                  <label for="inputTanggalAkhir" class="form-label">Tanggal Perpanjangan Waktu</label>
+                  <input type="date" name="inputTanggalAkhir" class="form-control" id="inputTanggalAkhir" aria-describedby="tanggalAkhirHelp">
+                  @if (\Session::has('error_inputTanggalAkhir'))
+                    <div id="tanggalAwalHelp" class="form-text text-danger"><i>{!! \Session::get('error_inputTanggalAkhir') !!}</i></div>
+                  @endif
+              </div>
+          </div>
+      </div>
+      <center>
+      <h3 class="title"> Ajukan Perpanjangan Waktu ?  </h3> 
+        @if (\Session::has('success'))
+          <div id="tanggalAwalHelp" class="form-text text-success"><i>{!! \Session::get('success') !!}</i></div>
+        @endif
+      <div class="button-pengajuan">
+                  <button type="submit" class="btn btn-primary" > Ajukan </button>
+                  <a type="button" class="btn btn-secondary" onclick="location.href ='{{route('loanhistory-pengunjung')}}'" role="button"> Batalkan </a>
+      </div>
     </div>
-    <center>
-    <h3 class="title"> Ajukan Perpanjangan Waktu ?  </h3> 
-    <div class="button-pengajuan">
-                <a type="submit" class="btn btn-primary" href="loanhistory_pengunjung.html" role="button"> Ajukan </a>
-                <a type="button" class="btn btn-secondary" href="homepage_pengunjung.html" role="button"> Batalkan </a>
-                  </div>
-        </div>
+    </form>
 
         <!--Footer -->
 <footer>
