@@ -7,6 +7,7 @@ use App\Models\Petugas;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -29,6 +30,7 @@ class AdminController extends Controller
         return view('admin.admin-dashboard-pengunjung', $data);
     
     }
+
 
 
     public function indexBook(){
@@ -122,9 +124,28 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editprofile(User $user, Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users,username,'.$user->id,
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'no_telepon' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return redirect()->back()->with('error', $validator->errors()->first());   
+        }
+
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_telepon = $request->no_telepon;
+        if($request->password){
+            $user->password = Hash::make($request->password);
+        }
+        $user->update();
+        return redirect()->route('profile-admin')->with('success', 'Success');   ;
     }
 
     /**
