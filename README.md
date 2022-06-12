@@ -32,6 +32,9 @@ Logout merupakan fungsi utama untuk user keluar dari sistem.
 ## Installation Guide
 - Terlebih dahulu melakukan clone ulang dari github
 - Menyiapkan lokasi untuk folder proyek
+- Melakukan Composer update
+- Menuju folder Vendor - laravel - ui - authbackend
+- Mengubah return view pada file authenticatesUsers dan file RegistersUser menjadi authnew.register
 - Menyiapkan nama database pada aplikasi yang digunakan 
 - Membuat file .env untuk menghubungkan ke database
 - Masuk ke terminal folder kemudian melakukan generate key untuk sistem
